@@ -1,0 +1,54 @@
+.modal__close {
+  position: absolute;
+  cursor: pointer;
+  right: 15px;
+  top: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+.modal__close:hover::after,
+.modal__close:hover::before {
+    background: orange;
+}
+
+.modal__close::after,
+.modal__close::before {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 30px;
+  height: 3px;
+  border-radius: 15px;
+  background: white;
+  display: block;
+  transform-origin: center;
+  transition: 0.2s all ease;
+}
+
+.modal__close::after {
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.modal__close::before {
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.3s ease-out forwards;
+}

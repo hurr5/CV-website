@@ -1,0 +1,15 @@
+[
+  {
+    "title": "Crypto Exchanger",
+    "github": "https://github.com/hurr5/cryptoEx",
+    "skills": ["React", "JavaScript", "HTML", "CSS", "REST API", "Git", "Vite", "Redux", "Redux Toolkit", "React Router DOM", "Motion"],
+    "description": "This project, based on React, represents a small crypto exchanger. The mechanism works as follows: Users can enter an amount in one cryptocurrency, select another cryptocurrency, and see the converted value based on current exchange rates from the Binance API and the Central Bank of Russia API.The app fetches real-time data from public APIs to ensure accurate conversions.It also includes two custom hooks for handling asynchronous actions such as fetching current rates.Next, orders are processed via a Telegram bot for the moderator: when a user confirms that they have transferred the money, the moderator verifies the transaction and releases the currency to the client."
+  },
+  {
+    "title": "BS-Security",
+    "github": "https://github.com/hurr5/hurr5.github.io",
+    "link": "https://hurr5.github.io/",
+    "skills": ["HTML", "CSS", "JavaScript", "Swiper", "BEM", "Git"],
+    "description": "This project is a landing page for a company website. The goal was to build a complete template using native HTML, CSS, and JavaScript. The only library I used was Swiper.js; the rest of the page was built entirely by me. I implemented modal windows with event listeners for various actions, such as clicking the close button, pressing the Escape key, and clicking outside the window. There is also an infinite running marquee. By the way, you can check it out yourself using the link above :)"
+  }
+]

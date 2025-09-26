@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Featured",
+    "skills": ["React", "JavaScript", "HTML", "CSS", "REST API", "Git", "Vite", "Redux", "Redux Toolkit", "React Router DOM", "Motion"]
+  },
+  {
+    "title": "Frontend",
+    "skills": ["JavaScript", "HTML", "CSS", "Material UI", "TailWind CSS", "Sass", "Bootstrap"]
+  },
+  {
+    "title": "Languages",
+    "skills": ["JavaScript", "PHP"]
+  },
+  {
+    "title": "Libraries",
+    "skills": ["Redux", "Redux Toolkit", "React Router DOM", "Motion", "Axios", "Formik", "Yup", "i18next", "React Hook Form", "Swiper"]
+  }
+]
