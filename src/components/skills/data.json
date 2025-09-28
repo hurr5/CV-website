@@ -14,5 +14,9 @@
   {
     "title": "Libraries",
     "skills": ["Redux", "Redux Toolkit", "React Router DOM", "Motion", "Axios", "Formik", "Yup", "i18next", "React Hook Form", "Swiper"]
+  },
+  {
+    "title": "In process",
+    "skills": ["TypeScript", "NextJS", "RTK Query"]
   }
 ]

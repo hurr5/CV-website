@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-dark: rgb(20, 19, 19);
+}
+
+body {
+  font-family: "Source Code Pro", monospace;;
 }
 
 body::selection {

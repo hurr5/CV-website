@@ -1,0 +1,27 @@
+[
+  {
+    "link": "https://www.t.me/hurricane751",
+    "icon": "faTelegram",
+    "alt": "Telegram"
+  },
+  {
+    "link": "https://www.linkedin.com/in/hurricane751",
+    "icon": "faLinkedin",
+    "alt": "LinkedIn"
+  },
+  {
+    "link": "https://www.github.com/hurr5",
+    "icon": "faGithub",
+    "alt": "GitHub"
+  },
+  {
+    "link": "mailto:arkh.m00@gmail.com",
+    "icon": "faEnvelope",
+    "alt": "E-mail"
+  },
+  {
+    "link": "tel:+79950056395",
+    "icon": "faMobile",
+    "alt": "Phone"
+  }
+]

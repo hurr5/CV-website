@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 
-
 const Header = () => {
   const [isDark, setIsDark] = useState(() => {
     const savedTheme = localStorage.getItem("theme");

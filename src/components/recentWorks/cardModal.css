@@ -9,7 +9,7 @@
 
 .modal__close:hover::after,
 .modal__close:hover::before {
-    background: orange;
+    background: rgb(255, 105, 0);
 }
 
 .modal__close::after,

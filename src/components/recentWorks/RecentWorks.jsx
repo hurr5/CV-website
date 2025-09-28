@@ -1,6 +1,6 @@
 import { Divider } from "../common/Divider"
 import { WorkCard } from "./WorkCard"
-import exchanger from "../../assets/exchanger.png"
+import exchanger from "../../assets/exchanger.webp"
 import works from "./data.json"
 
 
@@ -11,7 +11,7 @@ export const RecentWorks = () => {
     <section className="works">
       <Divider title="Recent Works" />
       {works.map((item, idx) => (
-        <WorkCard data={item} projectName={item.title} image={exchanger} />
+        <WorkCard key={item.title} data={item} projectName={item.title} image={exchanger} />
       ))}
     </section>
   )

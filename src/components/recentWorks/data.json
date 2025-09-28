@@ -3,6 +3,8 @@
     "title": "Crypto Exchanger",
     "github": "https://github.com/hurr5/cryptoEx",
     "skills": ["React", "JavaScript", "HTML", "CSS", "REST API", "Git", "Vite", "Redux", "Redux Toolkit", "React Router DOM", "Motion"],
+    "image": "exchanger",
+    "shortDesc": "Web application improvised crypto exchanger, based on react and django.",
     "description": "This project, based on React, represents a small crypto exchanger. The mechanism works as follows: Users can enter an amount in one cryptocurrency, select another cryptocurrency, and see the converted value based on current exchange rates from the Binance API and the Central Bank of Russia API.The app fetches real-time data from public APIs to ensure accurate conversions.It also includes two custom hooks for handling asynchronous actions such as fetching current rates.Next, orders are processed via a Telegram bot for the moderator: when a user confirms that they have transferred the money, the moderator verifies the transaction and releases the currency to the client."
   },
   {
@@ -10,6 +12,17 @@
     "github": "https://github.com/hurr5/hurr5.github.io",
     "link": "https://hurr5.github.io/",
     "skills": ["HTML", "CSS", "JavaScript", "Swiper", "BEM", "Git"],
+    "image": "exchanger",
+    "shortDesc": "Website fully developed on native HTML, CSS and JS.",
     "description": "This project is a landing page for a company website. The goal was to build a complete template using native HTML, CSS, and JavaScript. The only library I used was Swiper.js; the rest of the page was built entirely by me. I implemented modal windows with event listeners for various actions, such as clicking the close button, pressing the Escape key, and clicking outside the window. There is also an infinite running marquee. By the way, you can check it out yourself using the link above :)"
+  },
+    {
+    "title": "Portfolio",
+    "github": "https://github.com/hurr5",
+    "link": "#",
+    "skills": ["React", "TailWind CSS", "JavaScript", "BEM", "TippyJS", "Git", "i18next", "Vite"],
+    "image": "exchanger",
+    "shortDesc": "You are now at this site.",
+    "description": "The goal of this web application is to experiment with all the libraries I’ve always wanted to try. For example, you can switch the language and change the theme. I hope you’ll like it. If you’re interested in hiring me, feel free to contact me."
   }
 ]

@@ -18,10 +18,10 @@ export const SkillSection = ({ title, skills }) => {
         </span>
       </button>
 
-      <div style={{ maxHeight: open ? "140px" : "0" }} className={`transition-all duration-500 overflow-hidden`}>
+      <div style={{ maxHeight: open ? "165px" : "0" }} className={`transition-all duration-500 overflow-hidden`}>
         <div className={`skills__list text-white flex flex-wrap gap-3 mt-5`}>
           {skills.map(skill => (
-            <div key={skill} className="skill p-2 bg-black/3  0 dark:bg-white/10 rounded-md hover:bg-orange-500/70 transition-colors">
+            <div key={skill} className="skill p-2 bg-black/30 dark:bg-white/10 rounded-md hover:bg-orange-500/70 transition-colors">
               {skill}
             </div>
           ))}

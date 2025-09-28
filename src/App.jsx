@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Header from "./components/header/Header.jsx";
 import AboutMe from "./components/aboutMe/AboutMe.jsx";
 import { Skills } from "./components/skills/Skills.jsx";
+import { Footer } from "./components/footer/Footer.jsx"
 import "./App.css";
 import { RecentWorks } from "./components/recentWorks/RecentWorks.jsx";
 
@@ -20,11 +21,13 @@ function App() {
     }
   }, []);
   return (
-    <div className="relative container mx-auto max-w-xl px-4 sm:pl-5 sm:pr-5 min-h-screen transition-colors">
+    <div className="relative container mx-auto max-w-xl px-4 sm:pl-5 sm:pr-5 min-h-screen transition-colors over">
       <Header />
       <AboutMe />
       <Skills />
       <RecentWorks />
+
+      <Footer />
     </div>
   );
 }
