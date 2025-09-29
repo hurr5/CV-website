@@ -1,7 +1,6 @@
 import { CardModal } from "./CardModal"
 import { useState } from "react"
 import Tippy from '@tippyjs/react';
-import { followCursor } from 'tippy.js'
 
 
 export const WorkCard = ({ data, projectName, image }) => {
