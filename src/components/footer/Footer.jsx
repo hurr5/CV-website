@@ -25,7 +25,7 @@ export const Footer = () => {
             key={idx}
             target="_blank"
             aria-label={item.alt}
-            className="glow text-white text-2xl text-center">
+            className="glow dark:text-white/50 hover:dark:text-white transition-colors duration-1000 text-2xl text-center">
             <FontAwesomeIcon icon={icons[item.icon]} />
             <div className="text-sm">
               {item.alt}

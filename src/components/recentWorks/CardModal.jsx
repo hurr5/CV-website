@@ -26,15 +26,15 @@ export const CardModal = ({ data, onClose, image }) => {
 
   return (
     <>
-      <div className="fixed inset-0 bg-black/10 backdrop-blur-[2px] z-40 transition-opacity duration-300 ease-out animate-fadeIn"></div>
+      <div className="fixed inset-0 backdrop-blur-[2px] z-40 transition-opacity duration-300 ease-out animate-fadeIn"></div>
 
       <div onClick={() => onClose(false)} className="
       fixed inset-0 flex items-center 
-      justify-center dark:text-white z-50">
+      justify-center dark:text-white z-50 bg-black/40 dark:bg-black/10">
         <div onClick={e => e.stopPropagation()} className="
           relative w-4xl h-[60vh] border border-white/20
           p-12 rounded-2xl backdrop-blur-sm
-          bg-black/20 transform transition-all duration-300
+          bg-black/50 dark:bg-black/20 transform transition-all duration-300
           ease-out animate-scaleIn overflow-scroll">
           <div className="modal__close" onClick={() => onClose(false)}></div>
           <div className="modal__header flex justify-between">
@@ -67,7 +67,7 @@ export const CardModal = ({ data, onClose, image }) => {
                 </span>
               </div>
               <div className={`relative mt-5 max-w-120 text-base 
-                overflow-hidden transition-all duration-500 
+                overflow-hidden transition-all duration-500 text-white
                 ${expanded ? "max-h-[500px]" : "max-h-18"}`}>
                 <p>
                   {data.description}
