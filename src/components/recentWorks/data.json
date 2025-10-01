@@ -1,28 +1,37 @@
 [
   {
-    "title": "Crypto Exchanger",
+    "enTitle": "Crypto Exchanger",
+    "ruTitle": "Обменник криптовалют",
     "github": "https://github.com/hurr5/cryptoEx",
     "skills": ["React", "JavaScript", "HTML", "CSS", "REST API", "Git", "Vite", "Redux", "Redux Toolkit", "React Router DOM", "Motion"],
     "image": "exchanger",
-    "shortDesc": "Web application improvised crypto exchanger, based on react and django.",
-    "description": "This project, based on React, represents a small crypto exchanger. The mechanism works as follows: Users can enter an amount in one cryptocurrency, select another cryptocurrency, and see the converted value based on current exchange rates from the Binance API and the Central Bank of Russia API.The app fetches real-time data from public APIs to ensure accurate conversions.It also includes two custom hooks for handling asynchronous actions such as fetching current rates.Next, orders are processed via a Telegram bot for the moderator: when a user confirms that they have transferred the money, the moderator verifies the transaction and releases the currency to the client."
+    "enShortDesc": "Web application improvised crypto exchanger, based on react and django.",
+    "ruShortDesc": "Веб-приложение импровизированного криптообменника, построенное на react и django.",
+    "enDescription": "This project, based on React, represents a small crypto exchanger. The mechanism works as follows: Users can enter an amount in one cryptocurrency, select another cryptocurrency, and see the converted value based on current exchange rates from the Binance API and the Central Bank of Russia API.The app fetches real-time data from public APIs to ensure accurate conversions.It also includes two custom hooks for handling asynchronous actions such as fetching current rates.Next, orders are processed via a Telegram bot for the moderator: when a user confirms that they have transferred the money, the moderator verifies the transaction and releases the currency to the client.",
+    "ruDescription": "Этот проект построен на React, представляет из себя небольшой обменник криптовалют. Механизм работы следующий: пользователь вводит количество одной из валют, выбрав перед этим интересующий актив, также выбирает второй актив, в итооге он видит предлагаемый обменником курс, который будет использован при обмене и сумма к оплате. Курсы валют берутся из API Binance и API ЦБ РФ, после чего дополнительно обрабатыватся в кастомных хуках. После ввода необходимых для создания ордера данных сервер обрабатывает запрос, создает заказ и происходит переход на страницу оплаты. Человек получает свои реквизиты для оплаты, при необходимости прикладывает доказательства оплаты и жмет 'подтвердить'. После подтверждения в telegram бот приходит подтверждение оплаты и модератор дополнительно проверяет оплату. Далее оплата подтверждается обменником и пользователь получает сресдтва." 
   },
   {
-    "title": "BS-Security",
+    "enTitle": "BS-Security",
+    "ruTitle": "БС-безопасность",
     "github": "https://github.com/hurr5/hurr5.github.io",
     "link": "https://hurr5.github.io/",
     "skills": ["HTML", "CSS", "JavaScript", "Swiper", "BEM", "Git"],
     "image": "exchanger",
-    "shortDesc": "Website fully developed on native HTML, CSS and JS.",
-    "description": "This project is a landing page for a company website. The goal was to build a complete template using native HTML, CSS, and JavaScript. The only library I used was Swiper.js; the rest of the page was built entirely by me. I implemented modal windows with event listeners for various actions, such as clicking the close button, pressing the Escape key, and clicking outside the window. There is also an infinite running marquee. By the way, you can check it out yourself using the link above :)"
+    "enShortDesc": "Website fully developed on native HTML, CSS and JS.",
+    "ruShortDesc": "Сайт, полностью разработанный на чистых HTML, CSS и JS.",
+    "enDescription": "This project is a landing page for a company website. The goal was to build a complete template using native HTML, CSS, and JavaScript. The only library I used was Swiper.js; the rest of the page was built entirely by me. I implemented modal windows with event listeners for various actions, such as clicking the close button, pressing the Escape key, and clicking outside the window. There is also an infinite running marquee. By the way, you can check it out yourself using the link above :)",
+    "ruDescription": "Этот проект — лендинг для сайта компании. Целью было построить полноценный шаблон, используя только нативные HTML, CSS и JavaScript. Единственной библиотекой, которую я применил, стала Swiper.js, остальное реализовано полностью вручную. Я сделал модальные окна с обработчиками событий для разных действий: нажатия на кнопку закрытия, клавишу Escape и клика вне окна. Также реализована бесконечная бегущая строка. Кстати, можно посмотреть самому по ссылке выше :)"
   },
-    {
-    "title": "Portfolio",
+  {
+    "enTitle": "Portfolio",
+    "ruTitle": "Портфолио",
     "github": "https://github.com/hurr5",
     "link": "#",
     "skills": ["React", "TailWind CSS", "JavaScript", "BEM", "TippyJS", "Git", "i18next", "Vite"],
     "image": "exchanger",
-    "shortDesc": "You are now at this site.",
-    "description": "The goal of this web application is to experiment with all the libraries I’ve always wanted to try. For example, you can switch the language and change the theme. I hope you’ll like it. If you’re interested in hiring me, feel free to contact me."
+    "enShortDesc": "You are now at this site.",
+    "ruShortDesc": "Вы сейчас находитесь на этом сайте.",
+    "enDescription": "The goal of this web application is to experiment with all the libraries I’ve always wanted to try. For example, you can switch the language and change the theme. I hope you’ll like it. If you’re interested in hiring me, feel free to contact me.",
+    "ruDescription": "Цель этого веб-приложения — попробовать все библиотеки, которые мне давно хотелось изучить. Например, здесь можно переключать язык и менять тему. Надеюсь, сайт вам понравится. Если вы заинтересованы в сотрудничестве — свяжитесь со мной."
   }
 ]

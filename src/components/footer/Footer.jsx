@@ -1,4 +1,6 @@
 import { Divider } from "../common/Divider"
+import { useTranslation } from 'react-i18next'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTelegram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { faEnvelope, faMobile } from "@fortawesome/free-solid-svg-icons"
@@ -15,9 +17,12 @@ const icons = {
 }
 
 export const Footer = () => {
+  const { t, i18n } = useTranslation()
+  const lang = i18n.language
+
   return (
     <footer className="min-h-70">
-      <Divider title="Contacts" />
+      <Divider title={t("contacts.sectionTitle")} />
       <div className="links flex justify-around">
         {data.map((item, idx) => (
           <a

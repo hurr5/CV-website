@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@floating-ui/react": "^0.27.16",
     "@fortawesome/fontawesome-svg-core": "^7.0.1",
     "@fortawesome/free-brands-svg-icons": "^7.0.1",
     "@fortawesome/free-regular-svg-icons": "^7.0.1",
@@ -21,9 +20,12 @@
     "classnames": "^2.5.1",
     "i18next": "^25.5.2",
     "react": "^19.1.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^19.1.0",
     "react-i18next": "^15.7.3",
     "react-router-dom": "^7.6.2",
+    "react-tooltip": "^5.29.1",
+    "tailwind-scrollbar-hide": "^4.0.0",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {

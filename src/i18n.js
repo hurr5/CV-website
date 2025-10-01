@@ -13,6 +13,19 @@ const resources = {
         firstLine: "Привет, меня зовут Михаил.",
         secondLine: " Я разрабатываю веб-приложения на React. Проживаю в Краснодаре.",
         contact: " Связаться"
+      },
+      skills: {
+        sectionTitle: "Навыки"
+      },
+      recentWorks: {
+        sectionTitle: "Последние работы"
+      },
+      cardModal: {
+        link: "Опробовать",
+        desc: "Описание"
+      },
+      contacts: {
+        sectionTitle: "Контакты"
       }
     }
   },
@@ -27,6 +40,19 @@ const resources = {
         firstLine: "Hey there, I'm Mikhail.",
         secondLine: " I develop web applications using React. I live in Krasnodar, Russia.",
         contact: " Get in touch"
+      },
+      skills: {
+        sectionTitle: "Skills"
+      },
+      recentWorks: {
+        sectionTitle: "Recent works"
+      },
+      cardModal: {
+        link: "Try by yourself",
+        desc: "Description"
+      },
+      contacts: {
+        sectionTitle: "Contacts"
       }
     }
   }
@@ -36,7 +62,7 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "ru",
+    lng: "en",
     interpolation: {
       escapeValue: false
     }
