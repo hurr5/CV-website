@@ -23,14 +23,14 @@ export const Footer = () => {
   return (
     <footer className="min-h-70">
       <Divider title={t("contacts.sectionTitle")} />
-      <div className="links flex justify-around">
+      <div className="links flex justify-around gap-2">
         {data.map((item, idx) => (
           <a
             href={item.link}
             key={idx}
             target="_blank"
             aria-label={item.alt}
-            className="glow dark:text-white/50 hover:dark:text-white transition-colors duration-1000 text-2xl text-center">
+            className="glow dark:text-white/50 hover:dark:text-white transition-colors duration-1000 text-2xl text-center w-20">
             <FontAwesomeIcon icon={icons[item.icon]} />
             <div className="text-sm">
               {item.alt}

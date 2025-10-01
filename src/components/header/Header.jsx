@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useOutsideClick } from "rooks";
 
 const Header = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -10,6 +11,9 @@ const Header = () => {
 
   const [lang, setLang] = useState(() => localStorage.getItem("lang") || "ru");
   const [langMenuOpen, setLangMenuOpen] = useState(false);
+
+  const ref = useRef()
+  useOutsideClick(ref, () => setLangMenuOpen(false))
 
   const { t, i18n } = useTranslation();
 
@@ -61,9 +65,9 @@ const Header = () => {
 
       <div className="h-6 w-[1px] bg-current/20"></div>
 
-      <div className="relative header__language flex items-center gap-2">
+      <div ref={ref} className="relative header__language flex items-center gap-2">
         <button
-          onClick={() => setLangMenuOpen(!langMenuOpen)}
+          onClick={() => setLangMenuOpen(prev => !prev)}
           className="transition-colors cursor-pointer hover:text-black dark:hover:text-white flex items-center gap-1"
         >
           <span className="text-white">{lang === "RU" ? "" : ""}</span>

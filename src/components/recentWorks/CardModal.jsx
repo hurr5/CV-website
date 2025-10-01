@@ -40,7 +40,7 @@ export const CardModal = ({ data, onClose, image }) => {
           bg-black/50 dark:bg-black/20 transform transition-all duration-300
           ease-out animate-scaleIn overflow-scroll scrollbar-hide overflow-x-hidden">
           <div className="modal__close" onClick={() => onClose(false)}></div>
-          <div className="modal__header flex justify-between">
+          <div className="modal__header flex justify-between flex-col md:flex-row content-center">
             <div className="modal__info">
               <a href={data.github} target="_blank"
                 className="inline-flex items-center 
@@ -78,7 +78,7 @@ export const CardModal = ({ data, onClose, image }) => {
                 </p>
               </div>
             </div>
-            <div className="modal__technologies ">
+            <div className="modal__technologies mt-10 md:mt-0">
               <div className={`modal__technologies text-white flex flex-wrap max-w-100 gap-3`}>
                 {data.skills.map(skill => (
                   <span key={skill} className={`skill p-2 bg-black/30 dark:bg-white/10 

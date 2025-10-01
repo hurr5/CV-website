@@ -25,6 +25,7 @@
     "react-i18next": "^15.7.3",
     "react-router-dom": "^7.6.2",
     "react-tooltip": "^5.29.1",
+    "rooks": "^9.3.0",
     "tailwind-scrollbar-hide": "^4.0.0",
     "tippy.js": "^6.3.7"
   },
