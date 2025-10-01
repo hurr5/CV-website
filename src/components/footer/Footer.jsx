@@ -39,10 +39,8 @@ export const Footer = () => {
         ))}
       </div>
       <span className="block footer-name mt-20 text-center dark:text-white">
-        Mikhail Arkhangelskii
+        {t("contacts.name")}
       </span>
-      <div className="footer-glow"></div>
-
     </footer>
   )
 }

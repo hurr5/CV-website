@@ -1,22 +1,27 @@
 [
   {
-    "title": "Featured",
+    "enTitle": "Featured",
+    "ruTitle": "Основные",
     "skills": ["React", "JavaScript", "HTML", "CSS", "REST API", "Git", "Vite", "Redux", "Redux Toolkit", "React Router DOM", "Motion"]
   },
   {
-    "title": "Frontend",
+    "enTitle": "Frontend",
+    "ruTitle": "Frontend",
     "skills": ["JavaScript", "HTML", "CSS", "Material UI", "TailWind CSS", "Sass", "Bootstrap"]
   },
   {
-    "title": "Languages",
+    "enTitle": "Libraries",
+    "ruTitle": "Библиотеки",
     "skills": ["JavaScript", "PHP"]
   },
   {
-    "title": "Libraries",
+    "enTitle": "Languages",
+    "ruTitle": "Языки",
     "skills": ["Redux", "Redux Toolkit", "React Router DOM", "Motion", "Axios", "Formik", "Yup", "i18next", "React Hook Form", "Swiper"]
   },
   {
-    "title": "In process",
+    "enTitle": "In process",
+    "ruTitle": "В процессе",
     "skills": ["TypeScript", "NextJS", "RTK Query"]
   }
 ]

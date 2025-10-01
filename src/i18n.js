@@ -25,7 +25,8 @@ const resources = {
         desc: "Описание"
       },
       contacts: {
-        sectionTitle: "Контакты"
+        sectionTitle: "Контакты",
+        name: "Михаил Архангельский"
       }
     }
   },
@@ -52,7 +53,8 @@ const resources = {
         desc: "Description"
       },
       contacts: {
-        sectionTitle: "Contacts"
+        sectionTitle: "Contacts",
+        name: "Mikhail Arkhangelskii"
       }
     }
   }

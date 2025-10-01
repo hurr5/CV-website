@@ -10,8 +10,6 @@ export const CardModal = ({ data, onClose, image }) => {
   const { t, i18n } = useTranslation()
   const lang = i18n.language
 
-
-  console.log(lang)
   useEffect(() => {
     const originalStyle = window.getComputedStyle(document.body).overflow
     document.body.style.overflow = "hidden"
@@ -44,7 +42,8 @@ export const CardModal = ({ data, onClose, image }) => {
           <div className="modal__close" onClick={() => onClose(false)}></div>
           <div className="modal__header flex justify-between">
             <div className="modal__info">
-              <a href={data.github} target="_blank" className="inline-flex items-center 
+              <a href={data.github} target="_blank"
+                className="inline-flex items-center 
               gap-2 cursor-pointer text-white/60 
               hover:text-orange-500 transition-colors">
                 <h2 className="inline text-xl border-b-2 border-dotted">{lang === "en" ? data.enTitle : data.ruTitle}</h2>

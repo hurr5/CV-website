@@ -11,7 +11,7 @@ export const Skills = () => {
     <section className="skills max-w-lg cursor-default">
       <Divider title={t("skills.sectionTitle")} />
 
-      {skills.map((skill, idx) => <SkillSection key={idx} title={skill.title} skills={skill.skills} />)}
+      {skills.map((skill, idx) => <SkillSection key={idx} title={lang === "en" ? skill.enTitle : skill.ruTitle} skills={skill.skills} />)}
 
     </section>
   );
