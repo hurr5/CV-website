@@ -12,7 +12,7 @@ export const SkillSection = ({ title, skills }) => {
           <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
         </svg>
         {title}
-        <span className="ml-2 text-black/50 dark:text-white/50 border border-black/10 dark:border-white/20 rounded-md p-2">
+        <span className="ml-2 text-black/50 dark:text-white/50 border border-black/10 dark:border-white/20 rounded-md p-1">
           {skills.length}
         </span>
       </button>

@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useOutsideClick } from "rooks";
+import { US, RU } from 'country-flag-icons/react/3x2';
+
 
 const Header = () => {
   const [isDark, setIsDark] = useState(() => {
@@ -96,7 +98,7 @@ const Header = () => {
               cursor-pointer
               hover:bg-black/10 dark:hover:bg-white/10"
             >
-              🇷🇺
+              <RU title="Russian" className="w-4 h-5"/>
             </button>
             <button
               onClick={() => {
@@ -107,7 +109,7 @@ const Header = () => {
               cursor-pointer
               hover:bg-black/10 dark:hover:bg-white/10"
             >
-              🇺🇸
+              <US title="English" className="w-4 h-5"/>
             </button>
           </div>
         )}

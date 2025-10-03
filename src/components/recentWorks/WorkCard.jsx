@@ -34,7 +34,7 @@ export const WorkCard = ({ data, id, projectName, image }) => {
         </div>
       </div>
 
-      {isMobile ? null : (
+      {!isMobile && (
         <Tooltip id={`tooltip-${id}`} place="right"
           style={{ backgroundColor: "transparent", backdropFilter: "blur(10px)", padding: 0 }}>
           <div className="max-w-60 max-h-60 pb-2 
