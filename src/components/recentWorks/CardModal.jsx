@@ -35,7 +35,7 @@ export const CardModal = ({ data, onClose, image }) => {
       fixed inset-0 flex items-center 
       justify-center dark:text-white z-50 bg-black/40 dark:bg-black/10">
         <div onClick={e => e.stopPropagation()} className="
-          relative w-4xl h-[60vh] border border-white/20
+          relative w-4xl h-[80vh] border border-white/20
           p-12 rounded-2xl backdrop-blur-sm
           bg-black/50 dark:bg-black/20 transform transition-all duration-300
           ease-out animate-scaleIn overflow-scroll scrollbar-hide overflow-x-hidden">

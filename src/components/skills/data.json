@@ -10,13 +10,13 @@
     "skills": ["JavaScript", "HTML", "CSS", "Material UI", "TailWind CSS", "Sass", "Bootstrap"]
   },
   {
-    "enTitle": "Libraries",
-    "ruTitle": "Библиотеки",
+    "enTitle": "Languages",
+    "ruTitle": "Языки",
     "skills": ["JavaScript", "PHP"]
   },
   {
-    "enTitle": "Languages",
-    "ruTitle": "Языки",
+    "enTitle": "Libraries",
+    "ruTitle": "Библиотеки",
     "skills": ["Redux", "Redux Toolkit", "React Router DOM", "Motion", "Axios", "Formik", "Yup", "i18next", "React Hook Form", "Swiper"]
   },
   {
