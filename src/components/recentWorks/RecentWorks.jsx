@@ -9,7 +9,7 @@ export const RecentWorks = () => {
   const lang = i18n.language
 
   return (
-    <section className="works">
+    <section className="works" id="works">
       <Divider title={t("recentWorks.sectionTitle")} />
       {works.map((item, idx) => (
         <WorkCard

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { ChevronUp } from "lucide-react";
 
 export const SkillSection = ({ title, skills }) => {
   const [open, setOpen] = useState(false);
@@ -8,9 +9,7 @@ export const SkillSection = ({ title, skills }) => {
       <button
         onClick={() => setOpen((value) => !value)}
         className="text-sm font-medium tracking-wider uppercase text-black dark:text-white hover:text-orange-500 color-transition duration-300 cursor-pointer">
-        <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 20 20" aria-hidden="true" className={`mr-3 w-4 h-4 inline duration-200 ease-in-out ${open ? "rotate-180" : ""}`} height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-          <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd"></path>
-        </svg>
+        <ChevronUp className={`mr-3 w-4 h-4 inline duration-200 ease-in-out ${open ? "rotate-180" : ""}`}/>
         {title}
         <span className="ml-2 text-black/50 dark:text-white/50 border border-black/10 dark:border-white/20 rounded-md p-1">
           {skills.length}

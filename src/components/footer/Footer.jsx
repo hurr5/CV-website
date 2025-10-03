@@ -18,10 +18,9 @@ const icons = {
 
 export const Footer = () => {
   const { t, i18n } = useTranslation()
-  const lang = i18n.language
 
   return (
-    <footer className="min-h-70">
+    <footer className="min-h-70" id="contacts">
       <Divider title={t("contacts.sectionTitle")} />
       <div className="links flex justify-around gap-2">
         {data.map((item, idx) => (

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useOutsideClick } from "rooks";
 import { US, RU } from 'country-flag-icons/react/3x2';
+import { Sun, Moon } from "lucide-react";
 
 
 const Header = () => {
@@ -27,8 +28,6 @@ const Header = () => {
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", isDark);
-
-    i18n.changeLanguage(lang);
   }, [isDark]);
 
   const toggleTheme = () => {
@@ -46,19 +45,19 @@ const Header = () => {
     >
       <div className="header__links flex items-center gap-5 ">
         <a
-          href="#"
+          href="/"
           className="flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors"
         >
           {t("header.about")}
         </a>
         <a
-          href="#"
+          href="#works"
           className="flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors"
         >
           {t("header.projects")}
         </a>
         <a
-          href="#"
+          href="#contacts"
           className="flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors"
         >
           {t("header.contacts")}
@@ -122,31 +121,7 @@ const Header = () => {
           onClick={toggleTheme}
           className="transition-colors cursor-pointer hover:text-black dark:hover:text-white"
         >
-          {isDark ? (
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="18"
-              width="18"
-              viewBox="0 0 512 512"
-              fill="currentColor"
-            >
-              <path d="M256 0C114.6 0 0 114.6 0 256S114.6 512 256 512c68.8 0 131.3-27.2 177.3-71.4 7.3-7 9.4-17.9 5.3-27.1s-13.7-14.9-23.8-14.1c-4.9 .4-9.8 .6-14.8 .6-101.6 0-184-82.4-184-184 0-72.1 41.5-134.6 102.1-164.8 9.1-4.5 14.3-14.3 13.1-24.4S322.6 8.5 312.7 6.3C294.4 2.2 275.4 0 256 0z" />
-            </svg>
-          ) : (
-            <svg
-              width="18px"
-              height="18px"
-              viewBox="0 0 15 15"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M7.5 0C7.77614 0 8 0.223858 8 0.5V2.5C8 2.77614 7.77614 3 7.5 3C7.22386 3 7 2.77614 7 2.5V0.5C7 0.223858 7.22386 0 7.5 0ZM2.1967 2.1967C2.39196 2.00144 2.70854 2.00144 2.90381 2.1967L4.31802 3.61091C4.51328 3.80617 4.51328 4.12276 4.31802 4.31802C4.12276 4.51328 3.80617 4.51328 3.61091 4.31802L2.1967 2.90381C2.00144 2.70854 2.00144 2.39196 2.1967 2.1967ZM0.5 7C0.223858 7 0 7.22386 0 7.5C0 7.77614 0.223858 8 0.5 8H2.5C2.77614 8 3 7.77614 3 7.5C3 7.22386 2.77614 7 2.5 7H0.5ZM2.1967 12.8033C2.00144 12.608 2.00144 12.2915 2.1967 12.0962L3.61091 10.682C3.80617 10.4867 4.12276 10.4867 4.31802 10.682C4.51328 10.8772 4.51328 11.1938 4.31802 11.3891L2.90381 12.8033C2.70854 12.9986 2.39196 12.9986 2.1967 12.8033ZM12.5 7C12.2239 7 12 7.22386 12 7.5C12 7.77614 12.2239 8 12.5 8H14.5C14.7761 8 15 7.77614 15 7.5C15 7.22386 14.7761 7 14.5 7H12.5ZM10.682 4.31802C10.4867 4.12276 10.4867 3.80617 10.682 3.61091L12.0962 2.1967C12.2915 2.00144 12.608 2.00144 12.8033 2.1967C12.9986 2.39196 12.9986 2.70854 12.8033 2.90381L11.3891 4.31802C11.1938 4.51328 10.8772 4.51328 10.682 4.31802ZM8 12.5C8 12.2239 7.77614 12 7.5 12C7.22386 12 7 12.22386 7 12.5V14.5C7 14.7761 7.22386 15 7.5 15C7.77614 15 8 14.7761 8 14.5V12.5ZM10.682 10.682C10.8772 10.4867 11.1938 10.4867 11.3891 10.682L12.8033 12.0962C12.9986 12.2915 12.9986 12.608 12.8033 12.8033C12.608 12.9986 12.2915 12.9986 12.0962 12.8033L10.682 11.3891C10.4867 11.1938 10.4867 10.8772 10.682 10.682ZM5.5 7.5C5.5 6.39543 6.39543 5.5 7.5 5.5C8.60457 5.5 9.5 6.39543 9.5 7.5C9.5 8.60457 8.60457 9.5 7.5 9.5C6.39543 9.5 5.5 8.60457 5.5 7.5ZM7.5 4.5C5.84315 4.5 4.5 5.84315 4.5 7.5C4.5 9.15685 5.84315 10.5 7.5 10.5C9.15685 10.5 10.5 9.15685 10.5 7.5C10.5 5.84315 9.15685 4.5 7.5 4.5Z"
-              />
-            </svg>
-          )}
+          {isDark ? <Moon /> : <Sun /> }
         </button>
       </div>
     </nav >
