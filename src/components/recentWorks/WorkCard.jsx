@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Tooltip } from 'react-tooltip'
 import { isMobile } from 'react-device-detect'
 import { useTranslation } from "react-i18next"
-import {MoveRight} from "lucide-react"
+import { MoveRight } from "lucide-react"
 
 import './cardModal.css'
 
@@ -27,7 +27,7 @@ export const WorkCard = ({ data, id, projectName, image }) => {
         dark:hover:bg-white/10 transition-colors duration-500
         p-4 rounded-2xl group">
           <span>{projectName}</span>
-          <MoveRight className="group-hover:translate-x-3 transition-all duration-300"/>
+          <MoveRight className="group-hover:translate-x-3 transition-all duration-300" />
         </div>
       </div>
 
@@ -37,7 +37,7 @@ export const WorkCard = ({ data, id, projectName, image }) => {
           <div className="max-w-60 max-h-60 pb-2 
           rounded-2xl overflow-hidden
           border-1 border-black/40 dark:border-white/60 backdrop-blur-md">
-            <img src={`/${data.image}.webp`} className="max-w-60 mx-auto" alt={title} />
+            {/* <img src={`/${data.image}.webp`} className="max-w-60 mx-auto" alt={title} /> */}
             <div>
               <h3 className="dark:text-white pl-2 pt-1">{title}</h3>
               <p className="block text-gray-500 dark:text-gray-400 text-xs pl-3">{shortDesc}</p>
