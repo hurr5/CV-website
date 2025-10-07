@@ -39,7 +39,7 @@ export const WorkCard = ({ data, id, projectName, image }) => {
           border-1 border-black/40 dark:border-white/60 backdrop-blur-md">
             {/* <img src={`/${data.image}.webp`} className="max-w-60 mx-auto" alt={title} /> */}
             <div>
-              <h3 className="dark:text-white pl-2 pt-1">{title}</h3>
+              <h3 className="text-black dark:text-white pl-2 pt-1">{title}</h3>
               <p className="block text-gray-500 dark:text-gray-400 text-xs pl-3">{shortDesc}</p>
             </div>
           </div>
