@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import "./cardModal.css"
 
 
-export const CardModal = ({ data, onClose, image }) => {
+export const CardModal = ({ data, onClose }) => {
   const [expanded, setExpanded] = useState(false);
 
   const { t, i18n } = useTranslation()
