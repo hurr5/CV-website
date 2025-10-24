@@ -12,7 +12,7 @@
   {
     "enTitle": "Languages",
     "ruTitle": "Языки",
-    "skills": ["JavaScript", "PHP"]
+    "skills": ["JavaScript","TypeScript", "PHP"]
   },
   {
     "enTitle": "Libraries",
@@ -22,6 +22,6 @@
   {
     "enTitle": "In process",
     "ruTitle": "В процессе",
-    "skills": ["TypeScript", "NextJS", "RTK Query"]
+    "skills": ["NextJS", "RTK Query"]
   }
 ]
