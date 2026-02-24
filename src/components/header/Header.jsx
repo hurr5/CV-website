@@ -37,16 +37,16 @@ const Header = () => {
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
-  const linkClass = "flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors";
+  const linkClass = "flex items-center hover:text-black dark:hover:text-white whitespace-nowrap transition-colors text-[11px] sm:text-sm";
 
   return (
     <nav
-      className={`mx-auto mt-10 border rounded-2xl p-3 flex justify-center items-center gap-3 w-fit ${isDark
+      className={`mx-auto mt-10 border rounded-2xl p-2 sm:p-3 flex justify-center items-center gap-2 sm:gap-3 w-fit ${isDark
         ? "border-white/10 text-white/50 bg-transparent"
         : "border-black/10 text-black/50 bg-transparent"
         }`}
     >
-      <div className="header__links flex items-center gap-5 ">
+      <div className="header__links flex items-center gap-2 sm:gap-5">
         <a href="/" className={linkClass}>
           {t("header.about")}
         </a>
