@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useOutsideClick } from "rooks";
 import { US, RU } from 'country-flag-icons/react/3x2';
 import { Sun, Moon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -36,6 +37,8 @@ const Header = () => {
     localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
+  const linkClass = "flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors";
+
   return (
     <nav
       className={`mx-auto mt-10 border rounded-2xl p-3 flex justify-center items-center gap-3 w-fit ${isDark
@@ -44,24 +47,18 @@ const Header = () => {
         }`}
     >
       <div className="header__links flex items-center gap-5 ">
-        <a
-          href="/"
-          className="flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors"
-        >
+        <a href="/" className={linkClass}>
           {t("header.about")}
         </a>
-        <a
-          href="#works"
-          className="flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors"
-        >
+        <a href="/#works" className={linkClass}>
           {t("header.projects")}
         </a>
-        <a
-          href="#contacts"
-          className="flex items-center gap-2 hover:text-black dark:hover:text-white whitespace-nowrap transition-colors"
-        >
+        <a href="/#contacts" className={linkClass}>
           {t("header.contacts")}
         </a>
+        <Link to="/games" className={linkClass}>
+          {t("header.games")}
+        </Link>
       </div>
 
       <div className="h-6 w-[1px] bg-current/20"></div>
@@ -83,7 +80,7 @@ const Header = () => {
           </svg>
         </button>
         {langMenuOpen && (
-          <div className="absolute top-full mt-2 
+          <div className="absolute top-full mt-2
           -translate-x-4 transform
           border border-black/15
           dark:border-white/15 rounded-md
@@ -93,7 +90,7 @@ const Header = () => {
                 changeLang("ru")
                 setLangMenuOpen(!langMenuOpen)
               }}
-              className="block w-full text-left px-4 py-2 
+              className="block w-full text-left px-4 py-2
               cursor-pointer
               hover:bg-black/10 dark:hover:bg-white/10"
             >
@@ -104,7 +101,7 @@ const Header = () => {
                 changeLang("en")
                 setLangMenuOpen(!langMenuOpen)
               }}
-              className="block w-full text-left px-4 py-2 
+              className="block w-full text-left px-4 py-2
               cursor-pointer
               hover:bg-black/10 dark:hover:bg-white/10"
             >

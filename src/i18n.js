@@ -7,7 +7,8 @@ const resources = {
       header: {
         about: "Обо мне",
         projects: "Проекты",
-        contacts: "Контакты"
+        contacts: "Контакты",
+        games: "Игры"
       },
       aboutMe: {
         firstLine: "Привет, меня зовут Михаил.",
@@ -35,7 +36,8 @@ const resources = {
       header: {
         about: "Home",
         projects: "Projects",
-        contacts: "Contacts"
+        contacts: "Contacts",
+        games: "Games"
       },
       aboutMe: {
         firstLine: "Hey there, I'm Mikhail.",

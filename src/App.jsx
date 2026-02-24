@@ -1,11 +1,14 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
+import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/header/Header.jsx";
 import AboutMe from "./components/aboutMe/AboutMe.jsx";
-import {Skills} from "./components/skills/Skills.jsx";
-import {Footer} from "./components/footer/Footer.jsx"
+import { Skills } from "./components/skills/Skills.jsx";
+import { Footer } from "./components/footer/Footer.jsx";
 import "./App.css";
-import {RecentWorks} from "./components/recentWorks/RecentWorks.jsx";
+import { RecentWorks } from "./components/recentWorks/RecentWorks.jsx";
+import AnimatedBackground from "./components/AnimatedBackground.jsx";
+import GamesPage from "./pages/GamesPage.jsx";
 
 function App() {
   useEffect(() => {
@@ -20,14 +23,23 @@ function App() {
       }
     }
   }, []);
+
   return (
-    <div className="relative container mx-auto max-w-xl px-4 sm:pl-5 sm:pr-5 min-h-screen transition-colors over">
-      <Header/>
-      <AboutMe/>
-      <Skills/>
-      <RecentWorks/>
-      <Footer/>
-    </div>
+    <>
+      <AnimatedBackground />
+      <Routes>
+        <Route path="/" element={
+          <div className="relative container mx-auto max-w-xl px-4 sm:pl-5 sm:pr-5 min-h-screen transition-colors">
+            <Header />
+            <AboutMe />
+            <Skills />
+            <RecentWorks />
+            <Footer />
+          </div>
+        } />
+        <Route path="/games" element={<GamesPage />} />
+      </Routes>
+    </>
   );
 }
 

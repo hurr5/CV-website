@@ -33,14 +33,12 @@ export const WorkCard = ({ data, id, projectName, image }) => {
 
       {!isMobile && (
         <Tooltip id={`tooltip-${id}`} place="right"
-          style={{ backgroundColor: "transparent", backdropFilter: "blur(10px)", padding: 0 }}>
-          <div className="max-w-60 max-h-60 pb-2 
-          rounded-2xl overflow-hidden
-          border-1 border-black/40 dark:border-white/60 backdrop-blur-md">
-            {/* <img src={`/${data.image}.webp`} className="max-w-60 mx-auto" alt={title} /> */}
-            <div>
-              <h3 className="text-black dark:text-white pl-2 pt-1">{title}</h3>
-              <p className="block text-gray-500 dark:text-gray-400 text-xs pl-3">{shortDesc}</p>
+          style={{ backgroundColor: "transparent", padding: 0 }}>
+          <div className="w-60 overflow-hidden rounded-xl border border-white/10 bg-black/70 backdrop-blur-sm">
+            {image && <img src={image} className="w-full h-32 object-cover object-top" alt={title} />}
+            <div className="p-3">
+              <h3 className="text-white text-sm font-medium">{title}</h3>
+              <p className="text-white/50 text-xs mt-1 leading-relaxed">{shortDesc}</p>
             </div>
           </div>
         </Tooltip>

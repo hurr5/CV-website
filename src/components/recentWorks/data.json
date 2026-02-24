@@ -8,7 +8,7 @@
     "enShortDesc": "Web application improvised crypto exchanger, based on react and django.",
     "ruShortDesc": "Веб-приложение импровизированного криптообменника, построенное на react и django.",
     "enDescription": "This project, based on React, represents a small crypto exchanger. The mechanism works as follows: Users can enter an amount in one cryptocurrency, select another cryptocurrency, and see the converted value based on current exchange rates from the Binance API and the Central Bank of Russia API.The app fetches real-time data from public APIs to ensure accurate conversions.It also includes two custom hooks for handling asynchronous actions such as fetching current rates.Next, orders are processed via a Telegram bot for the moderator: when a user confirms that they have transferred the money, the moderator verifies the transaction and releases the currency to the client.",
-    "ruDescription": "Этот проект построен на React, представляет из себя небольшой обменник криптовалют. Механизм работы следующий: пользователь вводит количество одной из валют, выбрав перед этим интересующий актив, также выбирает второй актив, в итоге он видит предлагаемый обменником курс, который будет использован при обмене и сумма к оплате. Курсы валют берутся из API Binance и API ЦБ РФ, после чего дополнительно обрабатыватся в кастомных хуках. После ввода необходимых для создания ордера данных сервер обрабатывает запрос, создает заказ и происходит переход на страницу оплаты. Человек получает свои реквизиты для оплаты, при необходимости прикладывает доказательства оплаты и жмет 'подтвердить'. После подтверждения в telegram бот приходит подтверждение оплаты и модератор дополнительно проверяет оплату. Далее оплата подтверждается обменником и пользователь получает сресдтва." 
+    "ruDescription": "Этот проект построен на React, представляет из себя небольшой обменник криптовалют. Механизм работы следующий: пользователь вводит количество одной из валют, выбрав перед этим интересующий актив, также выбирает второй актив, в итоге он видит предлагаемый обменником курс, который будет использован при обмене и сумма к оплате. Курсы валют берутся из API Binance и API ЦБ РФ, после чего дополнительно обрабатыватся в кастомных хуках. После ввода необходимых для создания ордера данных сервер обрабатывает запрос, создает заказ и происходит переход на страницу оплаты. Человек получает свои реквизиты для оплаты, при необходимости прикладывает доказательства оплаты и жмет 'подтвердить'. После подтверждения в telegram бот приходит подтверждение оплаты и модератор дополнительно проверяет оплату. Далее оплата подтверждается обменником и пользователь получает сресдтва."
   },
   {
     "enTitle": "BS-Security",
@@ -31,7 +31,29 @@
     "image": "exchanger",
     "enShortDesc": "You are now at this site.",
     "ruShortDesc": "Вы сейчас находитесь на этом сайте.",
-    "enDescription": "The goal of this web application is to experiment with all the libraries I’ve always wanted to try. For example, you can switch the language and change the theme. I hope you’ll like it. If you’re interested in hiring me, feel free to contact me.",
+    "enDescription": "The goal of this web application is to experiment with all the libraries I've always wanted to try. For example, you can switch the language and change the theme. I hope you'll like it. If you're interested in hiring me, feel free to contact me.",
     "ruDescription": "Цель этого веб-приложения — попробовать все библиотеки, которые мне давно хотелось изучить. Например, здесь можно переключать язык и менять тему. Надеюсь, сайт вам понравится. Если вы заинтересованы в сотрудничестве — свяжитесь со мной."
+  },
+  {
+    "enTitle": "Moderation Platform",
+    "ruTitle": "Платформа модерации",
+    "github": "https://github.com/hurr5/ModerationPlatform",
+    "skills": ["React", "TypeScript", "Node.js", "Express", "Chakra UI", "TanStack Query", "Recharts", "Tailwind CSS", "Vite"],
+    "image": null,
+    "enShortDesc": "Ad listing moderation platform with a statistics dashboard and decision workflows.",
+    "ruShortDesc": "Платформа модерации объявлений с дашбордом статистики и управлением решениями.",
+    "enDescription": "A web application for moderating classified ad listings. Reviewers can browse submissions with filtering and pagination, then approve, reject with a reason, or return listings for revision. Includes a statistics dashboard with an activity chart, decision distribution breakdown, and category-level analytics. Built with a React and TypeScript frontend, backed by a Node.js and Express REST API.",
+    "ruDescription": "Веб-приложение для модерации объявлений. Модераторы могут просматривать поступившие объявления с фильтрацией и пагинацией, принимать, отклонять с указанием причины или отправлять на доработку. Предусмотрен дашборд статистики с графиком активности, распределением решений по типам и аналитикой по категориям. Фронтенд — React и TypeScript, бэкенд — Node.js с Express REST API."
+  },
+  {
+    "enTitle": "Booking Widget",
+    "ruTitle": "Виджет записи",
+    "github": "https://github.com/hurr5/booking",
+    "skills": ["React", "TypeScript", "Vite", "CSS", "Claude Code"],
+    "image": null,
+    "enShortDesc": "Appointment booking widget for a custom footwear workshop, with a built-in admin panel.",
+    "ruShortDesc": "Виджет онлайн-записи для обувной мастерской со встроенной админ-панелью.",
+    "enDescription": "A self-contained booking widget for scheduling appointments at a custom footwear workshop. Features a client-facing booking form and a full admin panel for managing time slots and appointments. Designed for seamless embedding as a widget into any existing web page. Developed through an AI-native workflow — the entire codebase was built using Claude Code with autonomous coding agents handling implementation, iteration, and refinement.",
+    "ruDescription": "Автономный виджет онлайн-записи на приём в мастерскую по изготовлению обуви. Включает клиентскую форму бронирования и полноценную админ-панель для управления временными слотами и записями. Спроектирован для встраивания в любую страницу в виде виджета. Разработан в парадигме AI-ориентированной разработки — весь код создан с использованием Claude Code и автономных агентов, которые взяли на себя реализацию, итерации и доработку."
   }
 ]
