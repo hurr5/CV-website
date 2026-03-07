@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 
 const COLS = 20, ROWS = 20, CELL = 13;
-const TICK = 8;
+const TICK_MS = 133; // 8 frames @ 60fps
 const rand = n => Math.floor(Math.random() * n);
 
 export const SnakeGame = () => {
@@ -14,7 +14,8 @@ export const SnakeGame = () => {
     canvas.height = ROWS * CELL;
 
     const g = {
-      phase: "idle", score: 0, best: 0, frame: 0,
+      phase: "idle", score: 0, best: 0,
+      elapsed: 0, lastTime: null,
       body: [{x:10,y:10},{x:9,y:10},{x:8,y:10}],
       dir: {x:1,y:0}, next: {x:1,y:0},
       food: {x:15,y:10},
@@ -28,7 +29,7 @@ export const SnakeGame = () => {
     };
 
     const restart = () => {
-      g.phase="playing"; g.score=0; g.frame=0;
+      g.phase="playing"; g.score=0; g.elapsed=0; g.lastTime=null;
       g.body=[{x:10,y:10},{x:9,y:10},{x:8,y:10}];
       g.dir={x:1,y:0}; g.next={x:1,y:0};
       spawnFood();
@@ -89,7 +90,11 @@ export const SnakeGame = () => {
     const dot  = (x,y,r,c) => { ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fillStyle=c; ctx.fill(); };
 
     let raf;
-    const draw = () => {
+    const draw = (timestamp) => {
+      if (g.lastTime === null) g.lastTime = timestamp;
+      const dt = Math.min(timestamp - g.lastTime, 50);
+      g.lastTime = timestamp;
+
       const dk = dark();
       const W = canvas.width, H = canvas.height;
       ctx.fillStyle = dk ? "rgb(16,15,15)" : "rgb(245,245,245)";
@@ -99,8 +104,9 @@ export const SnakeGame = () => {
       for (let x=CELL/2; x<W; x+=CELL) for (let y=CELL/2; y<H; y+=CELL) dot(x,y,1.1,dim);
 
       if (g.phase === "playing") {
-        g.frame++;
-        if (g.frame % TICK === 0) {
+        g.elapsed += dt;
+        if (g.elapsed >= TICK_MS) {
+          g.elapsed -= TICK_MS;
           g.dir = g.next;
           const h = g.body[0];
           const nx = h.x+g.dir.x, ny = h.y+g.dir.y;
@@ -146,7 +152,7 @@ export const SnakeGame = () => {
       raf = requestAnimationFrame(draw);
     };
 
-    draw();
+    raf = requestAnimationFrame(draw);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("keydown", onKey);

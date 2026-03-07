@@ -2,11 +2,12 @@ import { useEffect, useRef } from "react";
 
 const H       = 260;
 const BGRID   = 16;
-const CSTEP   = 7;   // chicken dot spacing
-const BSTEP   = 7;   // basket dot spacing
+const CSTEP   = 7;
+const BSTEP   = 7;
 const EGG_R   = 4.5;
 const BASKET_Y_OFFSET = 28;
-const CATCH_HALF = 26; // catch zone half-width
+const CATCH_HALF = 26;
+const DT60    = 16.667; // ms per frame at 60fps
 
 // chicken: 6-dot blob
 const CHICK = [[0,0],[1,0],[-1,0],[0,-1],[1,-1],[0,1]];
@@ -28,18 +29,20 @@ export const CatchEgg = () => {
 
     const state = { phase: "idle", score: 0, best: 0, lives: 3 };
     const chickens = [
-      { x: 0, y: 38, vx: 1.1, timer: 90 },
-      { x: 0, y: 38, vx: -1.3, timer: 130 },
+      { x: 0, y: 38, timer: 90 * DT60 },
+      { x: 0, y: 38, timer: 130 * DT60 },
     ];
     const eggs = [];
     let basket = { x: 0 };
     const keys = { left: false, right: false };
     let mouseX = -1, touchX = -1;
+    let lastTime = null;
 
     const reset = () => {
       state.phase = "playing"; state.score = 0; state.lives = 3;
       eggs.length = 0;
-      chickens[0].timer = 90; chickens[1].timer = 140;
+      chickens[0].timer = 90 * DT60; chickens[1].timer = 140 * DT60;
+      lastTime = null;
     };
 
     const onKey = e => {
@@ -76,9 +79,14 @@ export const CatchEgg = () => {
     const dot  = (x,y,r,c) => { ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fillStyle=c; ctx.fill(); };
 
     let raf;
-    const tick = () => {
+    const tick = (timestamp) => {
       if (!W) { raf = requestAnimationFrame(tick); return; }
+      if (lastTime === null) lastTime = timestamp;
+      const dt = Math.min(timestamp - lastTime, 50);
+      lastTime = timestamp;
+
       const dk = dark();
+      const scale = dt / DT60;
 
       ctx.fillStyle = dk ? "rgb(16,15,15)" : "rgb(245,245,245)";
       ctx.fillRect(0,0,W,H);
@@ -94,36 +102,39 @@ export const CatchEgg = () => {
       }
 
       if (state.phase === "playing") {
-        // move basket
         const margin = CATCH_HALF + 5;
+
+        // move basket (exponential lerp normalized to dt)
         if (mouseX !== -1) {
-          basket.x += (mouseX - basket.x) * 0.22;
+          const f = 1 - Math.pow(1 - 0.22, scale);
+          basket.x += (mouseX - basket.x) * f;
         } else if (touchX !== -1) {
-          basket.x += (touchX - basket.x) * 0.3;
+          const f = 1 - Math.pow(1 - 0.3, scale);
+          basket.x += (touchX - basket.x) * f;
         } else {
-          if (keys.left)  basket.x = Math.max(margin, basket.x - 4);
-          if (keys.right) basket.x = Math.min(W - margin, basket.x + 4);
+          if (keys.left)  basket.x = Math.max(margin, basket.x - 4 * scale);
+          if (keys.right) basket.x = Math.min(W - margin, basket.x + 4 * scale);
         }
         basket.x = Math.max(margin, Math.min(W - margin, basket.x));
 
-        // chickens
+        // chickens (time-based, already fine)
         chickens[0].x = Math.max(20, Math.min(W-20, Math.sin(Date.now()/2200) * (W*0.35) + W/3));
         chickens[1].x = Math.max(20, Math.min(W-20, Math.sin(Date.now()/1800 + 2) * (W*0.35) + 2*W/3));
 
-        // egg timers
+        // egg timers (ms-based)
         for (const ch of chickens) {
-          ch.timer--;
+          ch.timer -= dt;
           if (ch.timer <= 0) {
-            eggs.push({ x: ch.x, y: ch.y + 12, vy: 0.6 + Math.random()*0.8 });
-            ch.timer = 70 + Math.random()*100;
+            eggs.push({ x: ch.x, y: ch.y + 12, vy: (0.6 + Math.random()*0.8) });
+            ch.timer = (70 + Math.random()*100) * DT60;
           }
         }
 
         // move eggs + collision
         for (let i = eggs.length-1; i >= 0; i--) {
           const e = eggs[i];
-          e.vy = Math.min(e.vy + 0.15, 4.5);
-          e.y += e.vy;
+          e.vy = Math.min(e.vy + 0.15 * scale, 4.5);
+          e.y += e.vy * scale;
 
           if (e.y >= BASKET_Y - 8) {
             const caught = Math.abs(e.x - basket.x) < CATCH_HALF;
@@ -162,11 +173,9 @@ export const CatchEgg = () => {
         ctx.textAlign = "center";
         ctx.fillText("[ click / tap to start ]", W/2, H/2 + 20);
       } else if (state.phase === "playing") {
-        // score
         ctx.textAlign = "left";
         ctx.fillStyle = dk ? "rgba(255,255,255,0.55)" : "rgba(0,0,0,0.48)";
         ctx.fillText(String(state.score).padStart(3,"0"), 10, 18);
-        // lives
         ctx.textAlign = "right";
         ctx.fillText("♥".repeat(state.lives), W-10, 18);
       } else if (state.phase === "dead") {
@@ -178,7 +187,7 @@ export const CatchEgg = () => {
       raf = requestAnimationFrame(tick);
     };
 
-    tick();
+    raf = requestAnimationFrame(tick);
     return () => {
       cancelAnimationFrame(raf);
       ro.disconnect();

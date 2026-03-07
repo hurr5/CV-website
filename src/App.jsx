@@ -9,6 +9,7 @@ import "./App.css";
 import { RecentWorks } from "./components/recentWorks/RecentWorks.jsx";
 import AnimatedBackground from "./components/AnimatedBackground.jsx";
 import GamesPage from "./pages/GamesPage.jsx";
+import { ThemeProvider } from "./contexts/ThemeContext.jsx";
 
 function App() {
   useEffect(() => {
@@ -25,7 +26,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <ThemeProvider>
       <AnimatedBackground />
       <Routes>
         <Route path="/" element={
@@ -39,7 +40,7 @@ function App() {
         } />
         <Route path="/games" element={<GamesPage />} />
       </Routes>
-    </>
+    </ThemeProvider>
   );
 }
 

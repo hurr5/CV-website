@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {"id": 1,  "name": "snake_delta_time",             "status": "passing", "file": "deltaTime.test.js"},
+    {"id": 2,  "name": "flappy_delta_time",            "status": "passing", "file": "deltaTime.test.js"},
+    {"id": 3,  "name": "catch_egg_delta_time",         "status": "passing", "file": "deltaTime.test.js"},
+    {"id": 4,  "name": "2048_empty_cells",             "status": "passing", "file": "game2048Logic.test.js"},
+    {"id": 5,  "name": "2048_tile_animation_motion",   "status": "passing", "file": "game2048Logic.test.js"},
+    {"id": 6,  "name": "theme_context_switcher",       "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 7,  "name": "theme_css_variables",          "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 8,  "name": "theme_brutalism_fonts_bg",     "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 9,  "name": "theme_futurism_fonts_bg",      "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 10, "name": "theme_retro_fonts_bg",         "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 11, "name": "theme_terminal_fonts_bg",      "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 12, "name": "bg_brutalism_interactive",     "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 13, "name": "bg_futurism_interactive",      "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 14, "name": "bg_retro_interactive",         "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 15, "name": "bg_terminal_interactive",      "status": "passing", "file": "ThemeContext.test.jsx"},
+    {"id": 16, "name": "header_theme_switcher_ui",     "status": "passing", "file": "ThemeContext.test.jsx"}
+  ],
+  "vitest_run": {
+    "test_files": 3,
+    "total_tests": 43,
+    "passing": 43,
+    "failing": 0,
+    "run_at": "2026-03-07"
+  },
+  "total": 16,
+  "passing": 16,
+  "failing": 0,
+  "not_started": 0
+}

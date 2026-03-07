@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code:wght@300;400;500&display=swap');
 @import "tailwindcss";
 @import 'tailwind-scrollbar-hide/v4';
-
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -14,10 +17,10 @@ body {
 }
 
 body::selection {
-  background-color: rgba(255, 105, 0, 0.7)
+  background-color: rgba(255, 105, 0, 0.7);
 }
 
-/* ── Animated Background ── */
+/* ── Animated Background base ── */
 
 .animated-bg {
   position: fixed;
@@ -26,17 +29,332 @@ body::selection {
   overflow: hidden;
   pointer-events: none;
   background-color: rgb(250, 250, 250);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.4s ease;
 }
 
 .dark .animated-bg {
   background-color: rgb(20, 19, 19);
 }
 
-bg-dark {
-  background-color: rgb(20, 19, 19);
+
+/* ═══════════════════════════════════════════════════════════
+   BRUTALISM — Light: stark white / Dark: pitch black
+═══════════════════════════════════════════════════════════ */
+
+html[data-theme="brutalism"] body {
+  font-family: "Space Mono", monospace;
+  letter-spacing: -0.01em;
 }
 
-bg-light {
-  background-color: rgb(250, 250, 250);
+/* Light brutalism */
+html[data-theme="brutalism"]:not(.dark) .animated-bg {
+  background-color: #f2f2f2 !important;
+}
+html[data-theme="brutalism"]:not(.dark) .text-black\/80,
+html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/80 {
+  color: rgba(8, 8, 8, 0.92) !important;
+}
+html[data-theme="brutalism"]:not(.dark) .text-black\/25,
+html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/20,
+html[data-theme="brutalism"]:not(.dark) .text-black\/30,
+html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/25,
+html[data-theme="brutalism"]:not(.dark) .text-black\/50,
+html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/50 {
+  color: rgba(0, 0, 0, 0.38) !important;
+}
+html[data-theme="brutalism"]:not(.dark) .border-black\/10,
+html[data-theme="brutalism"]:not(.dark) .dark\:border-white\/10 {
+  border-color: rgba(220, 0, 0, 0.4) !important;
+}
+html[data-theme="brutalism"]:not(.dark) nav {
+  border-color: rgba(200, 0, 0, 0.55) !important;
+  background: rgba(242, 242, 242, 0.92) !important;
+}
+html[data-theme="brutalism"]:not(.dark) .hover\:text-orange-500:hover,
+html[data-theme="brutalism"]:not(.dark) a:hover { color: #cc0000 !important; }
+
+/* Dark brutalism */
+html[data-theme="brutalism"].dark .animated-bg {
+  background-color: #080808 !important;
+}
+html[data-theme="brutalism"].dark .text-black\/80,
+html[data-theme="brutalism"].dark .dark\:text-white\/80 {
+  color: rgba(238, 238, 238, 0.92) !important;
+}
+html[data-theme="brutalism"].dark .text-black\/25,
+html[data-theme="brutalism"].dark .dark\:text-white\/20,
+html[data-theme="brutalism"].dark .text-black\/30,
+html[data-theme="brutalism"].dark .dark\:text-white\/25,
+html[data-theme="brutalism"].dark .text-black\/50,
+html[data-theme="brutalism"].dark .dark\:text-white\/50 {
+  color: rgba(255, 255, 255, 0.32) !important;
+}
+html[data-theme="brutalism"].dark .border-black\/10,
+html[data-theme="brutalism"].dark .dark\:border-white\/10 {
+  border-color: rgba(255, 30, 0, 0.35) !important;
+}
+html[data-theme="brutalism"].dark nav {
+  border-color: rgba(255, 30, 0, 0.5) !important;
+  background: rgba(8, 8, 8, 0.95) !important;
+}
+html[data-theme="brutalism"].dark .hover\:text-orange-500:hover,
+html[data-theme="brutalism"].dark a:hover { color: #ff1e00 !important; }
+
+/* Shared brutalism: no rounded corners */
+html[data-theme="brutalism"] nav {
+  border-radius: 0 !important;
+  border-width: 2px !important;
+}
+html[data-theme="brutalism"] .rounded-2xl,
+html[data-theme="brutalism"] .rounded-xl,
+html[data-theme="brutalism"] .rounded-lg,
+html[data-theme="brutalism"] .rounded-md {
+  border-radius: 0 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   FUTURISM — Light: icy holographic / Dark: deep neon
+═══════════════════════════════════════════════════════════ */
+
+html[data-theme="futurism"] body {
+  font-family: "Share Tech Mono", monospace;
+  letter-spacing: 0.04em;
+}
+
+/* Light futurism */
+html[data-theme="futurism"]:not(.dark) .animated-bg {
+  background-color: #ecf4ff !important;
+}
+html[data-theme="futurism"]:not(.dark) .text-black\/80,
+html[data-theme="futurism"]:not(.dark) .dark\:text-white\/80 {
+  color: rgba(10, 22, 56, 0.88) !important;
+}
+html[data-theme="futurism"]:not(.dark) .text-black\/25,
+html[data-theme="futurism"]:not(.dark) .dark\:text-white\/20,
+html[data-theme="futurism"]:not(.dark) .text-black\/30,
+html[data-theme="futurism"]:not(.dark) .dark\:text-white\/25,
+html[data-theme="futurism"]:not(.dark) .text-black\/50,
+html[data-theme="futurism"]:not(.dark) .dark\:text-white\/50 {
+  color: rgba(0, 60, 160, 0.4) !important;
+}
+html[data-theme="futurism"]:not(.dark) .border-black\/10,
+html[data-theme="futurism"]:not(.dark) .dark\:border-white\/10 {
+  border-color: rgba(0, 80, 220, 0.2) !important;
+}
+html[data-theme="futurism"]:not(.dark) nav {
+  border-color: rgba(0, 80, 220, 0.28) !important;
+  background: rgba(230, 242, 255, 0.75) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 0 24px rgba(0, 100, 255, 0.08) !important;
+}
+html[data-theme="futurism"]:not(.dark) .hover\:text-orange-500:hover,
+html[data-theme="futurism"]:not(.dark) a:hover {
+  color: #0044ff !important;
+  text-shadow: 0 0 8px rgba(0, 68, 255, 0.4) !important;
+}
+
+/* Dark futurism */
+html[data-theme="futurism"].dark .animated-bg {
+  background-color: #050510 !important;
+}
+html[data-theme="futurism"].dark .text-black\/80,
+html[data-theme="futurism"].dark .dark\:text-white\/80 {
+  color: rgba(180, 240, 255, 0.88) !important;
+}
+html[data-theme="futurism"].dark .text-black\/25,
+html[data-theme="futurism"].dark .dark\:text-white\/20,
+html[data-theme="futurism"].dark .text-black\/30,
+html[data-theme="futurism"].dark .dark\:text-white\/25,
+html[data-theme="futurism"].dark .text-black\/50,
+html[data-theme="futurism"].dark .dark\:text-white\/50 {
+  color: rgba(0, 200, 255, 0.38) !important;
+}
+html[data-theme="futurism"].dark .border-black\/10,
+html[data-theme="futurism"].dark .dark\:border-white\/10 {
+  border-color: rgba(0, 200, 255, 0.2) !important;
+}
+html[data-theme="futurism"].dark nav {
+  border-color: rgba(0, 200, 255, 0.25) !important;
+  background: rgba(4, 6, 22, 0.7) !important;
+  backdrop-filter: blur(14px) !important;
+  box-shadow: 0 0 24px rgba(0, 200, 255, 0.07), inset 0 0 20px rgba(0, 200, 255, 0.03) !important;
+}
+html[data-theme="futurism"].dark .hover\:text-orange-500:hover,
+html[data-theme="futurism"].dark a:hover {
+  color: #00f0ff !important;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7) !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   RETRO — Light: warm 80s magazine / Dark: vintage espresso
+═══════════════════════════════════════════════════════════ */
+
+html[data-theme="retro"] body {
+  font-family: "Courier Prime", "Courier New", monospace;
+  letter-spacing: 0.015em;
+}
+
+/* Light retro: warm parchment with rich brown ink */
+html[data-theme="retro"]:not(.dark) .animated-bg {
+  background-color: #f6ead6 !important;
+}
+html[data-theme="retro"]:not(.dark) .text-black\/80,
+html[data-theme="retro"]:not(.dark) .dark\:text-white\/80 {
+  color: rgba(38, 18, 4, 0.88) !important;
+}
+html[data-theme="retro"]:not(.dark) .text-black\/25,
+html[data-theme="retro"]:not(.dark) .dark\:text-white\/20,
+html[data-theme="retro"]:not(.dark) .text-black\/30,
+html[data-theme="retro"]:not(.dark) .dark\:text-white\/25,
+html[data-theme="retro"]:not(.dark) .text-black\/50,
+html[data-theme="retro"]:not(.dark) .dark\:text-white\/50 {
+  color: rgba(100, 55, 15, 0.52) !important;
+}
+html[data-theme="retro"]:not(.dark) .border-black\/10,
+html[data-theme="retro"]:not(.dark) .dark\:border-white\/10 {
+  border-color: rgba(140, 80, 24, 0.32) !important;
+}
+html[data-theme="retro"]:not(.dark) nav {
+  border-color: rgba(130, 72, 20, 0.38) !important;
+  background: rgba(248, 238, 215, 0.88) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 2px 2px 0 rgba(140, 80, 24, 0.15) !important;
+}
+html[data-theme="retro"]:not(.dark) .hover\:text-orange-500:hover,
+html[data-theme="retro"]:not(.dark) a:hover {
+  color: #b83a10 !important;
+}
+
+/* Dark retro: vintage espresso with amber glow */
+html[data-theme="retro"].dark .animated-bg {
+  background-color: #160a01 !important;
+}
+html[data-theme="retro"].dark .text-black\/80,
+html[data-theme="retro"].dark .dark\:text-white\/80 {
+  color: rgba(240, 210, 140, 0.88) !important;
+}
+html[data-theme="retro"].dark .text-black\/25,
+html[data-theme="retro"].dark .dark\:text-white\/20,
+html[data-theme="retro"].dark .text-black\/30,
+html[data-theme="retro"].dark .dark\:text-white\/25,
+html[data-theme="retro"].dark .text-black\/50,
+html[data-theme="retro"].dark .dark\:text-white\/50 {
+  color: rgba(200, 140, 50, 0.45) !important;
+}
+html[data-theme="retro"].dark .border-black\/10,
+html[data-theme="retro"].dark .dark\:border-white\/10 {
+  border-color: rgba(180, 110, 30, 0.28) !important;
+}
+html[data-theme="retro"].dark nav {
+  border-color: rgba(180, 110, 30, 0.38) !important;
+  background: rgba(22, 10, 2, 0.92) !important;
+  backdrop-filter: blur(8px) !important;
+  box-shadow: 0 0 16px rgba(200, 130, 30, 0.08) !important;
+}
+html[data-theme="retro"].dark .hover\:text-orange-500:hover,
+html[data-theme="retro"].dark a:hover {
+  color: #e8961e !important;
+}
+
+/* Shared retro */
+html[data-theme="retro"] body::selection {
+  background-color: rgba(180, 100, 30, 0.38);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   TERMINAL — Dark: green phosphor / Light: paper terminal
+═══════════════════════════════════════════════════════════ */
+
+html[data-theme="terminal"] body {
+  font-family: "VT323", "Fira Code", monospace;
+  letter-spacing: 0.05em;
+}
+
+/* Light terminal: paper + dark ink */
+html[data-theme="terminal"]:not(.dark) .animated-bg {
+  background-color: #f8f5e6 !important;
+}
+html[data-theme="terminal"]:not(.dark) .text-black\/80,
+html[data-theme="terminal"]:not(.dark) .dark\:text-white\/80 {
+  color: rgba(18, 62, 20, 0.9) !important;
+}
+html[data-theme="terminal"]:not(.dark) .text-black\/25,
+html[data-theme="terminal"]:not(.dark) .dark\:text-white\/20,
+html[data-theme="terminal"]:not(.dark) .text-black\/30,
+html[data-theme="terminal"]:not(.dark) .dark\:text-white\/25,
+html[data-theme="terminal"]:not(.dark) .text-black\/50,
+html[data-theme="terminal"]:not(.dark) .dark\:text-white\/50 {
+  color: rgba(18, 62, 20, 0.42) !important;
+}
+html[data-theme="terminal"]:not(.dark) .border-black\/10,
+html[data-theme="terminal"]:not(.dark) .dark\:border-white\/10 {
+  border-color: rgba(18, 62, 20, 0.22) !important;
+}
+html[data-theme="terminal"]:not(.dark) nav {
+  border-color: rgba(18, 62, 20, 0.3) !important;
+  background: rgba(248, 245, 230, 0.92) !important;
+  backdrop-filter: blur(4px) !important;
+}
+html[data-theme="terminal"]:not(.dark) .hover\:text-orange-500:hover,
+html[data-theme="terminal"]:not(.dark) a:hover {
+  color: #1a6e1e !important;
+}
+
+/* Dark terminal: green phosphor on black */
+html[data-theme="terminal"].dark .animated-bg {
+  background-color: #000000 !important;
+}
+html[data-theme="terminal"].dark .text-black\/80,
+html[data-theme="terminal"].dark .dark\:text-white\/80 {
+  color: rgba(0, 255, 65, 0.88) !important;
+}
+html[data-theme="terminal"].dark .text-black\/25,
+html[data-theme="terminal"].dark .dark\:text-white\/20,
+html[data-theme="terminal"].dark .text-black\/30,
+html[data-theme="terminal"].dark .dark\:text-white\/25,
+html[data-theme="terminal"].dark .text-black\/50,
+html[data-theme="terminal"].dark .dark\:text-white\/50 {
+  color: rgba(0, 200, 50, 0.38) !important;
+}
+html[data-theme="terminal"].dark .border-black\/10,
+html[data-theme="terminal"].dark .dark\:border-white\/10 {
+  border-color: rgba(0, 255, 65, 0.18) !important;
+}
+html[data-theme="terminal"].dark nav {
+  border-color: rgba(0, 255, 65, 0.25) !important;
+  background: rgba(0, 8, 2, 0.88) !important;
+  backdrop-filter: blur(4px) !important;
+  box-shadow: 0 0 16px rgba(0, 255, 65, 0.06) !important;
+}
+html[data-theme="terminal"].dark .hover\:text-orange-500:hover,
+html[data-theme="terminal"].dark a:hover {
+  color: #00ff41 !important;
+  text-shadow: 0 0 6px rgba(0, 255, 65, 0.7) !important;
+}
+
+/* Shared terminal */
+html[data-theme="terminal"].dark body::selection {
+  background-color: rgba(0, 255, 65, 0.28);
+}
+
+html[data-theme="terminal"]:not(.dark) body::selection {
+  background-color: rgba(18, 62, 20, 0.28);
+}
+
+/* Blinking cursor in terminal nav */
+html[data-theme="terminal"] nav::after {
+  content: "_";
+  animation: term-blink 1s step-end infinite;
+  font-size: 0.85em;
+  margin-left: 4px;
+}
+html[data-theme="terminal"].dark nav::after { color: rgba(0, 255, 65, 0.65); }
+html[data-theme="terminal"]:not(.dark) nav::after { color: rgba(18, 62, 20, 0.55); }
+
+@keyframes term-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }

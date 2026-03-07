@@ -10,6 +10,7 @@ const BGRID = 16;
 const PDOT = 14;
 const BSTEP = 9;
 const BX = 70;
+const DT60 = 16.667; // ms per frame at 60fps
 
 // bird shape: 5 dots
 const BIRD = [[0,0],[-1,0],[1,0],[0,-1],[1,-1]];
@@ -28,9 +29,18 @@ export const FlappyBird = ({ bare = false }) => {
     const ro = new ResizeObserver(resize);
     ro.observe(canvas);
 
-    const s = { phase: "idle", by: H/2, bvy: 0, pipes: [], frame: 0, score: 0, best: 0 };
+    const s = {
+      phase: "idle", by: H/2, bvy: 0,
+      pipes: [], pipeTimer: 0,
+      score: 0, best: 0,
+      lastTime: null,
+    };
 
-    const reset = () => Object.assign(s, { phase: "playing", by: H/2, bvy: FLAP, pipes: [], frame: 0, score: 0 });
+    const reset = () => Object.assign(s, {
+      phase: "playing", by: H/2, bvy: FLAP,
+      pipes: [], pipeTimer: 0,
+      score: 0, lastTime: null,
+    });
 
     const flap = () => {
       if (s.phase === "idle")        reset();
@@ -57,29 +67,34 @@ export const FlappyBird = ({ bare = false }) => {
     };
 
     let raf;
-    const tick = () => {
+    const tick = (timestamp) => {
+      if (s.lastTime === null) s.lastTime = timestamp;
+      const dt = Math.min(timestamp - s.lastTime, 50);
+      s.lastTime = timestamp;
+
       const dk = dark();
 
-      // bg
       ctx.fillStyle = dk ? "rgb(16,15,15)" : "rgb(245,245,245)";
       ctx.fillRect(0, 0, W, H);
 
-      // bg grid dots
       const dim = dk ? "rgba(75,75,75,0.22)" : "rgba(150,150,150,0.28)";
       for (let x = BGRID; x < W; x += BGRID)
         for (let y = BGRID; y < H; y += BGRID)
           dot(x, y, 1.2, dim);
 
-      // --- physics ---
+      // --- physics (dt-normalized to 60fps) ---
       if (s.phase === "playing") {
-        s.bvy += GRAVITY;
-        s.by  += s.bvy;
-        s.frame++;
+        const scale = dt / DT60;
+        s.bvy += GRAVITY * scale;
+        s.by  += s.bvy   * scale;
 
-        if (s.frame % PIPE_EVERY === 0)
+        s.pipeTimer += dt;
+        if (s.pipeTimer >= PIPE_EVERY * DT60) {
+          s.pipeTimer -= PIPE_EVERY * DT60;
           s.pipes.push({ x: W + 10, gy: 55 + Math.random() * (H - GAP - 110), ok: false });
+        }
 
-        for (const p of s.pipes) p.x -= PIPE_SPEED;
+        for (const p of s.pipes) p.x -= PIPE_SPEED * scale;
         s.pipes = s.pipes.filter(p => p.x > -PDOT * 3);
 
         for (const p of s.pipes)
@@ -142,7 +157,7 @@ export const FlappyBird = ({ bare = false }) => {
       raf = requestAnimationFrame(tick);
     };
 
-    tick();
+    raf = requestAnimationFrame(tick);
 
     return () => {
       cancelAnimationFrame(raf);

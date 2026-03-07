@@ -4,6 +4,7 @@ import { useOutsideClick } from "rooks";
 import { US, RU } from 'country-flag-icons/react/3x2';
 import { Sun, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ThemeSwitcher } from "../ThemeSwitcher";
 
 
 const Header = () => {
@@ -110,6 +111,11 @@ const Header = () => {
           </div>
         )}
       </div>
+
+      <div className="h-6 w-[1px] bg-current/20"></div>
+
+      {/* Theme switcher */}
+      <ThemeSwitcher />
 
       <div className="h-6 w-[1px] bg-current/20"></div>
 
