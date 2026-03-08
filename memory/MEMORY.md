@@ -24,7 +24,7 @@
 
 ## Theme System
 - `data-theme` attribute on `<html>` element
-- Themes: default | brutalism | futurism | retro | terminal
+- Themes: default | brutalism | futurism | retro | vintage
 - ALL themes support dark + light mode via user toggle (no forced overrides)
 - Dark/light toggle always visible in header for all themes
 - AnimatedBackground switches drawing mode via `themeRef.current`, passes `isDark()` to all draw fns
@@ -36,14 +36,14 @@
 - brutalism: bold grid lines + mouse crosshair + diagonal stripes (red accent)
 - futurism: hexagonal grid + neon glow + particles + scanlines (cyan)
 - retro: halftone wave dots + animated bands (teal/coral hues)
-- terminal: matrix rain characters (VT323 font, green)
+- vintage: floating dust motes + ornamental cursor compass + ink bloom on click + vignette
 
 ## Fonts per theme
 - default: Source Code Pro
 - brutalism: Space Mono
 - futurism: Share Tech Mono + Orbitron
 - retro: Courier Prime
-- terminal: VT323 + Fira Code
+- vintage: Cormorant Garamond + Cormorant SC (Google Fonts serifs)
 
 ## Patterns
 - Frame-rate fix: `const DT60 = 16.667; scale = dt/DT60; value *= scale`

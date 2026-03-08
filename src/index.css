@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Share+Tech+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=VT323&family=Fira+Code:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=IM+Fell+English+SC&family=Spectral+SC:wght@300;400;500&family=Courier+Prime:ital,wght@0,400;0,700;1,400&display=swap');
 @import "tailwindcss";
 @import 'tailwind-scrollbar-hide/v4';
 
@@ -36,325 +36,256 @@ body::selection {
   background-color: rgb(20, 19, 19);
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   BRUTALISM — Light: stark white / Dark: pitch black
-═══════════════════════════════════════════════════════════ */
-
-html[data-theme="brutalism"] body {
-  font-family: "Space Mono", monospace;
-  letter-spacing: -0.01em;
+/* ── Default theme: Grainient (orange gradient with grain) ── */
+html[data-theme="default"]:not(.dark) .animated-bg {
+  background-color: #fdf0e8 !important;
+}
+html[data-theme="default"].dark .animated-bg {
+  background-color: #080300 !important;
 }
 
-/* Light brutalism */
-html[data-theme="brutalism"]:not(.dark) .animated-bg {
-  background-color: #f2f2f2 !important;
+html[data-theme="default"] .hover\:text-orange-500:hover,
+html[data-theme="default"] a:hover {
+  color: inherit !important;
 }
-html[data-theme="brutalism"]:not(.dark) .text-black\/80,
-html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/80 {
-  color: rgba(8, 8, 8, 0.92) !important;
+html[data-theme="default"] .hover\:bg-orange-500\/70:hover {
+  background-color: rgba(255, 255, 255, 0.12) !important;
 }
-html[data-theme="brutalism"]:not(.dark) .text-black\/25,
-html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/20,
-html[data-theme="brutalism"]:not(.dark) .text-black\/30,
-html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/25,
-html[data-theme="brutalism"]:not(.dark) .text-black\/50,
-html[data-theme="brutalism"]:not(.dark) .dark\:text-white\/50 {
-  color: rgba(0, 0, 0, 0.38) !important;
+html[data-theme="default"].dark .hover\:bg-orange-500\/70:hover {
+  background-color: rgba(255, 255, 255, 0.10) !important;
 }
-html[data-theme="brutalism"]:not(.dark) .border-black\/10,
-html[data-theme="brutalism"]:not(.dark) .dark\:border-white\/10 {
-  border-color: rgba(220, 0, 0, 0.4) !important;
-}
-html[data-theme="brutalism"]:not(.dark) nav {
-  border-color: rgba(200, 0, 0, 0.55) !important;
-  background: rgba(242, 242, 242, 0.92) !important;
-}
-html[data-theme="brutalism"]:not(.dark) .hover\:text-orange-500:hover,
-html[data-theme="brutalism"]:not(.dark) a:hover { color: #cc0000 !important; }
 
-/* Dark brutalism */
-html[data-theme="brutalism"].dark .animated-bg {
-  background-color: #080808 !important;
+/* ── Dither theme: orange noise wave ── */
+html[data-theme="dither"] .animated-bg {
+  background-color: #0a0500 !important;
 }
-html[data-theme="brutalism"].dark .text-black\/80,
-html[data-theme="brutalism"].dark .dark\:text-white\/80 {
-  color: rgba(238, 238, 238, 0.92) !important;
+html[data-theme="dither"] .content-block {
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  background-color: rgba(8, 4, 0, 0.40);
 }
-html[data-theme="brutalism"].dark .text-black\/25,
-html[data-theme="brutalism"].dark .dark\:text-white\/20,
-html[data-theme="brutalism"].dark .text-black\/30,
-html[data-theme="brutalism"].dark .dark\:text-white\/25,
-html[data-theme="brutalism"].dark .text-black\/50,
-html[data-theme="brutalism"].dark .dark\:text-white\/50 {
-  color: rgba(255, 255, 255, 0.32) !important;
-}
-html[data-theme="brutalism"].dark .border-black\/10,
-html[data-theme="brutalism"].dark .dark\:border-white\/10 {
-  border-color: rgba(255, 30, 0, 0.35) !important;
-}
-html[data-theme="brutalism"].dark nav {
-  border-color: rgba(255, 30, 0, 0.5) !important;
-  background: rgba(8, 8, 8, 0.95) !important;
-}
-html[data-theme="brutalism"].dark .hover\:text-orange-500:hover,
-html[data-theme="brutalism"].dark a:hover { color: #ff1e00 !important; }
 
-/* Shared brutalism: no rounded corners */
-html[data-theme="brutalism"] nav {
-  border-radius: 0 !important;
-  border-width: 2px !important;
+/* ── Alternative theme: clean minimal (original default) ── */
+html[data-theme="alternative"]:not(.dark) .animated-bg {
+  background-color: rgb(250, 250, 250);
 }
-html[data-theme="brutalism"] .rounded-2xl,
-html[data-theme="brutalism"] .rounded-xl,
-html[data-theme="brutalism"] .rounded-lg,
-html[data-theme="brutalism"] .rounded-md {
-  border-radius: 0 !important;
+html[data-theme="alternative"].dark .animated-bg {
+  background-color: rgb(20, 19, 19);
 }
 
 
 /* ═══════════════════════════════════════════════════════════
-   FUTURISM — Light: icy holographic / Dark: deep neon
+   VINTAGE
+   Light: #F5F0E8 aged paper + #2C2416 espresso ink
+   Dark:  #1A0F06 deep ink + #E2D5B8 aged ivory
 ═══════════════════════════════════════════════════════════ */
 
-html[data-theme="futurism"] body {
-  font-family: "Share Tech Mono", monospace;
-  letter-spacing: 0.04em;
+/* ── Typography ── */
+html[data-theme="vintage"] body {
+  font-family: "Source Serif 4", "Georgia", serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: 0.005em;
 }
 
-/* Light futurism */
-html[data-theme="futurism"]:not(.dark) .animated-bg {
-  background-color: #ecf4ff !important;
-}
-html[data-theme="futurism"]:not(.dark) .text-black\/80,
-html[data-theme="futurism"]:not(.dark) .dark\:text-white\/80 {
-  color: rgba(10, 22, 56, 0.88) !important;
-}
-html[data-theme="futurism"]:not(.dark) .text-black\/25,
-html[data-theme="futurism"]:not(.dark) .dark\:text-white\/20,
-html[data-theme="futurism"]:not(.dark) .text-black\/30,
-html[data-theme="futurism"]:not(.dark) .dark\:text-white\/25,
-html[data-theme="futurism"]:not(.dark) .text-black\/50,
-html[data-theme="futurism"]:not(.dark) .dark\:text-white\/50 {
-  color: rgba(0, 60, 160, 0.4) !important;
-}
-html[data-theme="futurism"]:not(.dark) .border-black\/10,
-html[data-theme="futurism"]:not(.dark) .dark\:border-white\/10 {
-  border-color: rgba(0, 80, 220, 0.2) !important;
-}
-html[data-theme="futurism"]:not(.dark) nav {
-  border-color: rgba(0, 80, 220, 0.28) !important;
-  background: rgba(230, 242, 255, 0.75) !important;
-  backdrop-filter: blur(14px) !important;
-  box-shadow: 0 0 24px rgba(0, 100, 255, 0.08) !important;
-}
-html[data-theme="futurism"]:not(.dark) .hover\:text-orange-500:hover,
-html[data-theme="futurism"]:not(.dark) a:hover {
-  color: #0044ff !important;
-  text-shadow: 0 0 8px rgba(0, 68, 255, 0.4) !important;
+html[data-theme="vintage"] h1,
+html[data-theme="vintage"] h2,
+html[data-theme="vintage"] h3,
+html[data-theme="vintage"] h4 {
+  font-family: "Playfair Display", "Georgia", serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 }
 
-/* Dark futurism */
-html[data-theme="futurism"].dark .animated-bg {
-  background-color: #050510 !important;
-}
-html[data-theme="futurism"].dark .text-black\/80,
-html[data-theme="futurism"].dark .dark\:text-white\/80 {
-  color: rgba(180, 240, 255, 0.88) !important;
-}
-html[data-theme="futurism"].dark .text-black\/25,
-html[data-theme="futurism"].dark .dark\:text-white\/20,
-html[data-theme="futurism"].dark .text-black\/30,
-html[data-theme="futurism"].dark .dark\:text-white\/25,
-html[data-theme="futurism"].dark .text-black\/50,
-html[data-theme="futurism"].dark .dark\:text-white\/50 {
-  color: rgba(0, 200, 255, 0.38) !important;
-}
-html[data-theme="futurism"].dark .border-black\/10,
-html[data-theme="futurism"].dark .dark\:border-white\/10 {
-  border-color: rgba(0, 200, 255, 0.2) !important;
-}
-html[data-theme="futurism"].dark nav {
-  border-color: rgba(0, 200, 255, 0.25) !important;
-  background: rgba(4, 6, 22, 0.7) !important;
-  backdrop-filter: blur(14px) !important;
-  box-shadow: 0 0 24px rgba(0, 200, 255, 0.07), inset 0 0 20px rgba(0, 200, 255, 0.03) !important;
-}
-html[data-theme="futurism"].dark .hover\:text-orange-500:hover,
-html[data-theme="futurism"].dark a:hover {
-  color: #00f0ff !important;
-  text-shadow: 0 0 10px rgba(0, 240, 255, 0.7) !important;
+/* Accent / decorative text — nav labels, small caps, subscripts */
+html[data-theme="vintage"] nav,
+html[data-theme="vintage"] .font-mono {
+  font-family: "IM Fell English SC", "Spectral SC", "Georgia", serif !important;
+  font-size: 0.82em;
+  letter-spacing: 0.10em;
+  font-weight: 400;
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   RETRO — Light: warm 80s magazine / Dark: vintage espresso
-═══════════════════════════════════════════════════════════ */
-
-html[data-theme="retro"] body {
-  font-family: "Courier Prime", "Courier New", monospace;
-  letter-spacing: 0.015em;
+/* Monospace fallback (code blocks, etc) */
+html[data-theme="vintage"] pre,
+html[data-theme="vintage"] code {
+  font-family: "Courier Prime", "Courier New", monospace !important;
 }
 
-/* Light retro: warm parchment with rich brown ink */
-html[data-theme="retro"]:not(.dark) .animated-bg {
-  background-color: #f6ead6 !important;
+/* ── Light: aged paper (#F5F0E8) + espresso (#2C2416) ── */
+html[data-theme="vintage"]:not(.dark) .animated-bg {
+  background-color: #F5F0E8 !important;
 }
-html[data-theme="retro"]:not(.dark) .text-black\/80,
-html[data-theme="retro"]:not(.dark) .dark\:text-white\/80 {
-  color: rgba(38, 18, 4, 0.88) !important;
+html[data-theme="vintage"]:not(.dark) .text-black\/80,
+html[data-theme="vintage"]:not(.dark) .dark\:text-white\/80 {
+  color: rgba(44, 36, 22, 0.90) !important;
 }
-html[data-theme="retro"]:not(.dark) .text-black\/25,
-html[data-theme="retro"]:not(.dark) .dark\:text-white\/20,
-html[data-theme="retro"]:not(.dark) .text-black\/30,
-html[data-theme="retro"]:not(.dark) .dark\:text-white\/25,
-html[data-theme="retro"]:not(.dark) .text-black\/50,
-html[data-theme="retro"]:not(.dark) .dark\:text-white\/50 {
-  color: rgba(100, 55, 15, 0.52) !important;
+html[data-theme="vintage"]:not(.dark) .text-black\/25,
+html[data-theme="vintage"]:not(.dark) .dark\:text-white\/20,
+html[data-theme="vintage"]:not(.dark) .text-black\/30,
+html[data-theme="vintage"]:not(.dark) .dark\:text-white\/25,
+html[data-theme="vintage"]:not(.dark) .text-black\/50,
+html[data-theme="vintage"]:not(.dark) .dark\:text-white\/50 {
+  color: rgba(92, 74, 50, 0.55) !important;
 }
-html[data-theme="retro"]:not(.dark) .border-black\/10,
-html[data-theme="retro"]:not(.dark) .dark\:border-white\/10 {
-  border-color: rgba(140, 80, 24, 0.32) !important;
+html[data-theme="vintage"]:not(.dark) .border-black\/10,
+html[data-theme="vintage"]:not(.dark) .dark\:border-white\/10 {
+  border-color: rgba(160, 137, 108, 0.40) !important;
 }
-html[data-theme="retro"]:not(.dark) nav {
-  border-color: rgba(130, 72, 20, 0.38) !important;
-  background: rgba(248, 238, 215, 0.88) !important;
-  backdrop-filter: blur(8px) !important;
-  box-shadow: 2px 2px 0 rgba(140, 80, 24, 0.15) !important;
+html[data-theme="vintage"]:not(.dark) nav {
+  background: rgba(245, 240, 232, 0.92) !important;
+  border-color: rgba(160, 137, 108, 0.40) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 1px 0 rgba(160, 137, 108, 0.20),
+              0 4px 20px rgba(44, 36, 22, 0.08) !important;
 }
-html[data-theme="retro"]:not(.dark) .hover\:text-orange-500:hover,
-html[data-theme="retro"]:not(.dark) a:hover {
-  color: #b83a10 !important;
-}
-
-/* Dark retro: vintage espresso with amber glow */
-html[data-theme="retro"].dark .animated-bg {
-  background-color: #160a01 !important;
-}
-html[data-theme="retro"].dark .text-black\/80,
-html[data-theme="retro"].dark .dark\:text-white\/80 {
-  color: rgba(240, 210, 140, 0.88) !important;
-}
-html[data-theme="retro"].dark .text-black\/25,
-html[data-theme="retro"].dark .dark\:text-white\/20,
-html[data-theme="retro"].dark .text-black\/30,
-html[data-theme="retro"].dark .dark\:text-white\/25,
-html[data-theme="retro"].dark .text-black\/50,
-html[data-theme="retro"].dark .dark\:text-white\/50 {
-  color: rgba(200, 140, 50, 0.45) !important;
-}
-html[data-theme="retro"].dark .border-black\/10,
-html[data-theme="retro"].dark .dark\:border-white\/10 {
-  border-color: rgba(180, 110, 30, 0.28) !important;
-}
-html[data-theme="retro"].dark nav {
-  border-color: rgba(180, 110, 30, 0.38) !important;
-  background: rgba(22, 10, 2, 0.92) !important;
-  backdrop-filter: blur(8px) !important;
-  box-shadow: 0 0 16px rgba(200, 130, 30, 0.08) !important;
-}
-html[data-theme="retro"].dark .hover\:text-orange-500:hover,
-html[data-theme="retro"].dark a:hover {
-  color: #e8961e !important;
+html[data-theme="vintage"]:not(.dark) .hover\:text-orange-500:hover,
+html[data-theme="vintage"]:not(.dark) a:hover {
+  color: #6B3A2A !important;
 }
 
-/* Shared retro */
-html[data-theme="retro"] body::selection {
-  background-color: rgba(180, 100, 30, 0.38);
+/* ── Dark: deep espresso (#1A0F06) + aged ivory (#E2D5B8) ── */
+html[data-theme="vintage"].dark .animated-bg {
+  background-color: #1A0F06 !important;
+}
+html[data-theme="vintage"].dark .text-black\/80,
+html[data-theme="vintage"].dark .dark\:text-white\/80 {
+  color: rgba(226, 213, 184, 0.90) !important;
+}
+html[data-theme="vintage"].dark .text-black\/25,
+html[data-theme="vintage"].dark .dark\:text-white\/20,
+html[data-theme="vintage"].dark .text-black\/30,
+html[data-theme="vintage"].dark .dark\:text-white\/25,
+html[data-theme="vintage"].dark .text-black\/50,
+html[data-theme="vintage"].dark .dark\:text-white\/50 {
+  color: rgba(168, 139, 96, 0.52) !important;
+}
+html[data-theme="vintage"].dark .border-black\/10,
+html[data-theme="vintage"].dark .dark\:border-white\/10 {
+  border-color: rgba(139, 115, 85, 0.38) !important;
+}
+html[data-theme="vintage"].dark nav {
+  background: rgba(22, 12, 5, 0.90) !important;
+  border-color: rgba(139, 115, 85, 0.36) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 0 32px rgba(201, 169, 110, 0.06),
+              inset 0 0 20px rgba(180, 140, 80, 0.03) !important;
+}
+html[data-theme="vintage"].dark .hover\:text-orange-500:hover,
+html[data-theme="vintage"].dark a:hover {
+  color: #D4A574 !important;
 }
 
-
-/* ═══════════════════════════════════════════════════════════
-   TERMINAL — Dark: green phosphor / Light: paper terminal
-═══════════════════════════════════════════════════════════ */
-
-html[data-theme="terminal"] body {
-  font-family: "VT323", "Fira Code", monospace;
-  letter-spacing: 0.05em;
+/* ── Shared ── */
+html[data-theme="vintage"]:not(.dark) body::selection {
+  background-color: rgba(139, 69, 19, 0.28);
+}
+html[data-theme="vintage"].dark body::selection {
+  background-color: rgba(212, 165, 116, 0.30);
 }
 
-/* Light terminal: paper + dark ink */
-html[data-theme="terminal"]:not(.dark) .animated-bg {
-  background-color: #f8f5e6 !important;
+/* Ornamental divider line in nav */
+html[data-theme="vintage"] nav::before {
+  content: "❧";
+  font-family: serif;
+  font-size: 1em;
+  margin-right: 8px;
+  opacity: 0.32;
+  animation: vin-breath 4s ease-in-out infinite;
+  display: inline-block;
 }
-html[data-theme="terminal"]:not(.dark) .text-black\/80,
-html[data-theme="terminal"]:not(.dark) .dark\:text-white\/80 {
-  color: rgba(18, 62, 20, 0.9) !important;
-}
-html[data-theme="terminal"]:not(.dark) .text-black\/25,
-html[data-theme="terminal"]:not(.dark) .dark\:text-white\/20,
-html[data-theme="terminal"]:not(.dark) .text-black\/30,
-html[data-theme="terminal"]:not(.dark) .dark\:text-white\/25,
-html[data-theme="terminal"]:not(.dark) .text-black\/50,
-html[data-theme="terminal"]:not(.dark) .dark\:text-white\/50 {
-  color: rgba(18, 62, 20, 0.42) !important;
-}
-html[data-theme="terminal"]:not(.dark) .border-black\/10,
-html[data-theme="terminal"]:not(.dark) .dark\:border-white\/10 {
-  border-color: rgba(18, 62, 20, 0.22) !important;
-}
-html[data-theme="terminal"]:not(.dark) nav {
-  border-color: rgba(18, 62, 20, 0.3) !important;
-  background: rgba(248, 245, 230, 0.92) !important;
-  backdrop-filter: blur(4px) !important;
-}
-html[data-theme="terminal"]:not(.dark) .hover\:text-orange-500:hover,
-html[data-theme="terminal"]:not(.dark) a:hover {
-  color: #1a6e1e !important;
+html[data-theme="vintage"]:not(.dark) nav::before { color: #8B4513; }
+html[data-theme="vintage"].dark nav::before       { color: #C9A96E; }
+
+@keyframes vin-breath {
+  0%, 100% { opacity: 0.22; transform: scale(1);     }
+  50%       { opacity: 0.42; transform: scale(1.10);  }
 }
 
-/* Dark terminal: green phosphor on black */
-html[data-theme="terminal"].dark .animated-bg {
-  background-color: #000000 !important;
+/* Cards — warm paper feel */
+html[data-theme="vintage"]:not(.dark) .rounded-2xl,
+html[data-theme="vintage"]:not(.dark) .rounded-xl {
+  background-color: rgba(232, 224, 208, 0.50) !important;
+  border-color: rgba(160, 137, 108, 0.30) !important;
+  box-shadow: 0 2px 16px rgba(44, 36, 22, 0.08) !important;
+  transition: filter 350ms ease-out, box-shadow 350ms ease-out !important;
 }
-html[data-theme="terminal"].dark .text-black\/80,
-html[data-theme="terminal"].dark .dark\:text-white\/80 {
-  color: rgba(0, 255, 65, 0.88) !important;
+html[data-theme="vintage"]:not(.dark) .rounded-2xl:hover,
+html[data-theme="vintage"]:not(.dark) .rounded-xl:hover {
+  filter: sepia(0.14);
+  box-shadow: 0 4px 24px rgba(44, 36, 22, 0.12) !important;
 }
-html[data-theme="terminal"].dark .text-black\/25,
-html[data-theme="terminal"].dark .dark\:text-white\/20,
-html[data-theme="terminal"].dark .text-black\/30,
-html[data-theme="terminal"].dark .dark\:text-white\/25,
-html[data-theme="terminal"].dark .text-black\/50,
-html[data-theme="terminal"].dark .dark\:text-white\/50 {
-  color: rgba(0, 200, 50, 0.38) !important;
+html[data-theme="vintage"].dark .rounded-2xl,
+html[data-theme="vintage"].dark .rounded-xl {
+  background-color: rgba(28, 16, 6, 0.52) !important;
+  border-color: rgba(139, 115, 85, 0.28) !important;
+  box-shadow: 0 2px 16px rgba(8, 4, 2, 0.25) !important;
+  transition: filter 350ms ease-out, box-shadow 350ms ease-out !important;
 }
-html[data-theme="terminal"].dark .border-black\/10,
-html[data-theme="terminal"].dark .dark\:border-white\/10 {
-  border-color: rgba(0, 255, 65, 0.18) !important;
-}
-html[data-theme="terminal"].dark nav {
-  border-color: rgba(0, 255, 65, 0.25) !important;
-  background: rgba(0, 8, 2, 0.88) !important;
-  backdrop-filter: blur(4px) !important;
-  box-shadow: 0 0 16px rgba(0, 255, 65, 0.06) !important;
-}
-html[data-theme="terminal"].dark .hover\:text-orange-500:hover,
-html[data-theme="terminal"].dark a:hover {
-  color: #00ff41 !important;
-  text-shadow: 0 0 6px rgba(0, 255, 65, 0.7) !important;
+html[data-theme="vintage"].dark .rounded-2xl:hover,
+html[data-theme="vintage"].dark .rounded-xl:hover {
+  filter: sepia(0.10);
+  box-shadow: 0 4px 24px rgba(8, 4, 2, 0.35) !important;
 }
 
-/* Shared terminal */
-html[data-theme="terminal"].dark body::selection {
-  background-color: rgba(0, 255, 65, 0.28);
+/* Images: subtle sepia aging */
+html[data-theme="vintage"] img {
+  filter: sepia(0.20) contrast(0.95) brightness(1.02);
+  border-radius: 3px;
+  outline: 1px solid rgba(160, 137, 108, 0.30);
+  outline-offset: 2px;
 }
 
-html[data-theme="terminal"]:not(.dark) body::selection {
-  background-color: rgba(18, 62, 20, 0.28);
+/* Buttons: flat, bordered, no radius — inset press on hover */
+html[data-theme="vintage"] button:not(nav button):not(header button) {
+  border-radius: 2px !important;
+  border: 1.5px solid rgba(160, 137, 108, 0.60) !important;
+  transition: background-color 300ms ease-out,
+              color 300ms ease-out,
+              box-shadow 250ms ease-out !important;
+}
+html[data-theme="vintage"]:not(.dark) button:not(nav button):not(header button):hover {
+  background-color: #8B4513 !important;
+  color: #F5F0E8 !important;
+  box-shadow: inset 0 2px 4px rgba(44, 36, 22, 0.25) !important;
+}
+html[data-theme="vintage"].dark button:not(nav button):not(header button):hover {
+  background-color: #C9A96E !important;
+  color: #1A0F06 !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.30) !important;
 }
 
-/* Blinking cursor in terminal nav */
-html[data-theme="terminal"] nav::after {
-  content: "_";
-  animation: term-blink 1s step-end infinite;
-  font-size: 0.85em;
-  margin-left: 4px;
+/* Custom scrollbar — parchment track + brass thumb */
+html[data-theme="vintage"] ::-webkit-scrollbar {
+  width: 8px;
 }
-html[data-theme="terminal"].dark nav::after { color: rgba(0, 255, 65, 0.65); }
-html[data-theme="terminal"]:not(.dark) nav::after { color: rgba(18, 62, 20, 0.55); }
+html[data-theme="vintage"]:not(.dark) ::-webkit-scrollbar-track {
+  background: #E8E0D0;
+}
+html[data-theme="vintage"]:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #C9A96E;
+  border-radius: 0;
+}
+html[data-theme="vintage"]:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #8B4513;
+}
+html[data-theme="vintage"].dark ::-webkit-scrollbar-track {
+  background: #2A1A0A;
+}
+html[data-theme="vintage"].dark ::-webkit-scrollbar-thumb {
+  background: #8B7355;
+  border-radius: 0;
+}
+html[data-theme="vintage"].dark ::-webkit-scrollbar-thumb:hover {
+  background: #C9A96E;
+}
 
-@keyframes term-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+/* Ornamental section dividers via double border */
+html[data-theme="vintage"] hr {
+  border: none;
+  border-top: 1px solid rgba(160, 137, 108, 0.40);
+  box-shadow: 0 2px 0 rgba(160, 137, 108, 0.16);
+  margin: 1.5em 0;
 }

@@ -38,9 +38,9 @@ describe("THEMES", () => {
     expect(THEMES).toHaveLength(5);
   });
 
-  it("includes default, brutalism, futurism, retro, terminal", () => {
+  it("includes default, brutalism, futurism, retro, vintage", () => {
     expect(THEMES).toEqual(
-      expect.arrayContaining(["default", "brutalism", "futurism", "retro", "terminal"])
+      expect.arrayContaining(["default", "brutalism", "futurism", "retro", "vintage"])
     );
   });
 });
@@ -54,8 +54,8 @@ describe("ThemeProvider — initial state", () => {
   });
 
   it("reads persisted theme from localStorage on mount", () => {
-    const getCtx = renderWithProvider("terminal");
-    expect(getCtx().theme).toBe("terminal");
+    const getCtx = renderWithProvider("vintage");
+    expect(getCtx().theme).toBe("vintage");
   });
 
   it("sets data-theme attribute on <html> after mount", () => {
@@ -86,8 +86,8 @@ describe("ThemeProvider — setTheme", () => {
 
   it("updates data-theme attribute on <html>", () => {
     const getCtx = renderWithProvider();
-    act(() => { getCtx().setTheme("terminal"); });
-    expect(document.documentElement.getAttribute("data-theme")).toBe("terminal");
+    act(() => { getCtx().setTheme("vintage"); });
+    expect(document.documentElement.getAttribute("data-theme")).toBe("vintage");
   });
 
   it("can cycle through all 5 themes", () => {

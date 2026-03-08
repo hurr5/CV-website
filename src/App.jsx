@@ -30,7 +30,7 @@ function App() {
       <AnimatedBackground />
       <Routes>
         <Route path="/" element={
-          <div className="relative container mx-auto max-w-xl px-4 sm:pl-5 sm:pr-5 min-h-screen transition-colors">
+          <div className="relative container mx-auto max-w-xl px-4 sm:pl-5 sm:pr-5 min-h-screen transition-colors content-block">
             <Header />
             <AboutMe />
             <Skills />

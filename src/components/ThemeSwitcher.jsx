@@ -3,11 +3,10 @@ import { useOutsideClick } from "rooks";
 import { useTheme, THEMES } from "../contexts/ThemeContext";
 
 const THEME_META = {
-  default:    { label: "OS",  icon: "◉", desc: "Default" },
-  brutalism:  { label: "BRU", icon: "▓", desc: "Brutalism" },
-  futurism:   { label: "FUT", icon: "◈", desc: "Futurism" },
-  retro:      { label: "RET", icon: "◍", desc: "Retro" },
-  terminal:   { label: "TRM", icon: "█", desc: "Terminal" },
+  default:     { label: "DEF", icon: "◐", desc: "Default" },
+  dither:      { label: "DTH", icon: "▒", desc: "Dither" },
+  alternative: { label: "ALT", icon: "◉", desc: "Alternative" },
+  vintage:     { label: "VIN", icon: "❧", desc: "Vintage" },
 };
 
 export const ThemeSwitcher = () => {

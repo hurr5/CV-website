@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 
-export const THEMES = ["default", "brutalism", "futurism", "retro", "terminal"];
+export const THEMES = ["default", "dither", "alternative", "vintage"];
 
 const ThemeContext = createContext({ theme: "default", setTheme: () => {} });
 

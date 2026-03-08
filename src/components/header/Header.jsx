@@ -42,12 +42,12 @@ const Header = () => {
 
   return (
     <nav
-      className={`mx-auto mt-10 border rounded-2xl p-2 sm:p-3 flex justify-center items-center gap-2 sm:gap-3 w-fit ${isDark
-        ? "border-white/10 text-white/50 bg-transparent"
-        : "border-black/10 text-black/50 bg-transparent"
+      className={`mx-auto mt-10 mb-10 sticky top-10 z-50 border rounded-2xl p-2 sm:p-3 flex justify-center items-center gap-2 sm:gap-3 w-fit backdrop-blur-xl ${isDark
+        ? "border-white/10 text-white/50 bg-white/5"
+        : "border-black/10 text-black/50 bg-black/5"
         }`}
     >
-      <div className="header__links flex items-center gap-2 sm:gap-5">
+      <div className="header__links flex items-center gap-2 sm:gap-5 ">
         <a href="/" className={linkClass}>
           {t("header.about")}
         </a>
